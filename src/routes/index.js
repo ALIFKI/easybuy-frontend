@@ -6,17 +6,36 @@ import RegisterScreen from '../screens/RegisterScreen'
 import LoginScreen from '../screens/LoginScreen'
 import { navigationRef } from './RootNav';
 import { connect } from 'react-redux';
+import SplashScreen from '../screens/SplashScreen';
 
 const Stack = createStackNavigator();
 
 export class Route extends Component {
     constructor(props) {
-        super()
+        super(props)
+        this.state = {
+            isLoad : false
+        }
+    }
+    componentDidMount(){
+        setTimeout(() => {
+            this.setState({
+                isLoad : true
+            })
+        }, 3000);
     }
     render() {
         return (
             <NavigationContainer  ref={navigationRef}>
             <Stack.Navigator>
+                {
+                    this.state.isLoad ? (
+                        <>
+                        </>
+                    ) : (
+                        <Stack.Screen name="SplashScreen" component={SplashScreen} options={{headerShown : false}} />
+                    )
+                }
                 {
                     this.props.user.isLogin ? (
                         <>
