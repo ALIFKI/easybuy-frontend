@@ -71,6 +71,7 @@
 		E409A261A2544A5CB194BEEF /* Metropolis-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3100EF06197D490F926133AD /* Metropolis-Thin.ttf */; };
 		84E61B99AA5C418F803B0620 /* Metropolis-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 45D114CC4DC048C5972C1C6C /* Metropolis-ThinItalic.ttf */; };
 <<<<<<< HEAD
+<<<<<<< HEAD
 		F2687D89ABCF4F19AABAF9A3 /* AntDesign.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E9FC7CB929574914AAF045A1 /* AntDesign.ttf */; };
 		1686446D203B4596962E73C6 /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DFE3EA855A094DE8A614B1F0 /* Entypo.ttf */; };
 		9025E40AAC504C02BEC90966 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9BD25E4134B64D0A93ED0C1C /* EvilIcons.ttf */; };
@@ -88,6 +89,8 @@
 		D719A0A5F3874EBAA8F5DF21 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 402488D27D7F46AAAF251D8F /* SimpleLineIcons.ttf */; };
 		16F28962345C48D9A09022E9 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 871A8B8CBEB342BAB8A64F5A /* Zocial.ttf */; };
 =======
+=======
+>>>>>>> loginScreen-forgotPassword
 		6E573CE506644A35ABE6BAA7 /* AntDesign.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9B7CD2CA1F814FE0AFB34AAE /* AntDesign.ttf */; };
 		A6AD2D24FEC04A499F36B78F /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9F68157CCE9445079261E667 /* Entypo.ttf */; };
 		9228B94E0DEB42BE967077FB /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BA5F7F1B973F42069BA50AAB /* EvilIcons.ttf */; };
@@ -104,6 +107,9 @@
 		4F7D9D3B7E4B4653A24B60C1 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 97F23B4A110442E192215B0F /* Octicons.ttf */; };
 		FD8DAEC785874327A2D1CD79 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BD3F552C07B41E097BA4062 /* SimpleLineIcons.ttf */; };
 		B9C145BF6C594FACB4BE4877 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E96E896CA824821BF6F3BB0 /* Zocial.ttf */; };
+<<<<<<< HEAD
+>>>>>>> loginScreen-forgotPassword
+=======
 >>>>>>> loginScreen-forgotPassword
 /* End PBXBuildFile section */
 
@@ -195,6 +201,7 @@
 		3100EF06197D490F926133AD /* Metropolis-Thin.ttf */ = {isa = PBXFileReference; name = "Metropolis-Thin.ttf"; path = "../src/assets/fonts/TrueType/Metropolis-Thin.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		45D114CC4DC048C5972C1C6C /* Metropolis-ThinItalic.ttf */ = {isa = PBXFileReference; name = "Metropolis-ThinItalic.ttf"; path = "../src/assets/fonts/TrueType/Metropolis-ThinItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 <<<<<<< HEAD
+<<<<<<< HEAD
 		E9FC7CB929574914AAF045A1 /* AntDesign.ttf */ = {isa = PBXFileReference; name = "AntDesign.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		DFE3EA855A094DE8A614B1F0 /* Entypo.ttf */ = {isa = PBXFileReference; name = "Entypo.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		9BD25E4134B64D0A93ED0C1C /* EvilIcons.ttf */ = {isa = PBXFileReference; name = "EvilIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
@@ -212,6 +219,8 @@
 		402488D27D7F46AAAF251D8F /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; name = "SimpleLineIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		871A8B8CBEB342BAB8A64F5A /* Zocial.ttf */ = {isa = PBXFileReference; name = "Zocial.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 =======
+=======
+>>>>>>> loginScreen-forgotPassword
 		9B7CD2CA1F814FE0AFB34AAE /* AntDesign.ttf */ = {isa = PBXFileReference; name = "AntDesign.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		9F68157CCE9445079261E667 /* Entypo.ttf */ = {isa = PBXFileReference; name = "Entypo.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		BA5F7F1B973F42069BA50AAB /* EvilIcons.ttf */ = {isa = PBXFileReference; name = "EvilIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
@@ -228,6 +237,9 @@
 		97F23B4A110442E192215B0F /* Octicons.ttf */ = {isa = PBXFileReference; name = "Octicons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		3BD3F552C07B41E097BA4062 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; name = "SimpleLineIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		7E96E896CA824821BF6F3BB0 /* Zocial.ttf */ = {isa = PBXFileReference; name = "Zocial.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+<<<<<<< HEAD
+>>>>>>> loginScreen-forgotPassword
+=======
 >>>>>>> loginScreen-forgotPassword
 /* End PBXFileReference section */
 
@@ -394,6 +406,7 @@
 				3100EF06197D490F926133AD /* Metropolis-Thin.ttf */,
 				45D114CC4DC048C5972C1C6C /* Metropolis-ThinItalic.ttf */,
 <<<<<<< HEAD
+<<<<<<< HEAD
 				E9FC7CB929574914AAF045A1 /* AntDesign.ttf */,
 				DFE3EA855A094DE8A614B1F0 /* Entypo.ttf */,
 				9BD25E4134B64D0A93ED0C1C /* EvilIcons.ttf */,
@@ -411,6 +424,8 @@
 				402488D27D7F46AAAF251D8F /* SimpleLineIcons.ttf */,
 				871A8B8CBEB342BAB8A64F5A /* Zocial.ttf */,
 =======
+=======
+>>>>>>> loginScreen-forgotPassword
 				9B7CD2CA1F814FE0AFB34AAE /* AntDesign.ttf */,
 				9F68157CCE9445079261E667 /* Entypo.ttf */,
 				BA5F7F1B973F42069BA50AAB /* EvilIcons.ttf */,
@@ -427,6 +442,9 @@
 				97F23B4A110442E192215B0F /* Octicons.ttf */,
 				3BD3F552C07B41E097BA4062 /* SimpleLineIcons.ttf */,
 				7E96E896CA824821BF6F3BB0 /* Zocial.ttf */,
+<<<<<<< HEAD
+>>>>>>> loginScreen-forgotPassword
+=======
 >>>>>>> loginScreen-forgotPassword
 			);
 			name = Resources;
@@ -626,6 +644,7 @@
 				E409A261A2544A5CB194BEEF /* Metropolis-Thin.ttf in Resources */,
 				84E61B99AA5C418F803B0620 /* Metropolis-ThinItalic.ttf in Resources */,
 <<<<<<< HEAD
+<<<<<<< HEAD
 				F2687D89ABCF4F19AABAF9A3 /* AntDesign.ttf in Resources */,
 				1686446D203B4596962E73C6 /* Entypo.ttf in Resources */,
 				9025E40AAC504C02BEC90966 /* EvilIcons.ttf in Resources */,
@@ -643,6 +662,8 @@
 				D719A0A5F3874EBAA8F5DF21 /* SimpleLineIcons.ttf in Resources */,
 				16F28962345C48D9A09022E9 /* Zocial.ttf in Resources */,
 =======
+=======
+>>>>>>> loginScreen-forgotPassword
 				6E573CE506644A35ABE6BAA7 /* AntDesign.ttf in Resources */,
 				A6AD2D24FEC04A499F36B78F /* Entypo.ttf in Resources */,
 				9228B94E0DEB42BE967077FB /* EvilIcons.ttf in Resources */,
@@ -659,6 +680,9 @@
 				4F7D9D3B7E4B4653A24B60C1 /* Octicons.ttf in Resources */,
 				FD8DAEC785874327A2D1CD79 /* SimpleLineIcons.ttf in Resources */,
 				B9C145BF6C594FACB4BE4877 /* Zocial.ttf in Resources */,
+<<<<<<< HEAD
+>>>>>>> loginScreen-forgotPassword
+=======
 >>>>>>> loginScreen-forgotPassword
 			);
 			runOnlyForDeploymentPostprocessing = 0;
