@@ -59,6 +59,16 @@ export class Route extends Component {
                 component={RegisterScreen}
                 options={{headerShown: false}}
               />
+              <Stack.Screen
+                name="ForgotPassword"
+                component={ForgotPassword}
+                options={{headerShown: false}}
+              />
+              <Stack.Screen
+                name="ResetPassword"
+                component={ResetPassword}
+                options={{headerShown: false}}
+              />
             </>
           )}
         </Stack.Navigator>
