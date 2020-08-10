@@ -7,6 +7,7 @@ import LoginScreen from '../screens/LoginScreen'
 import { navigationRef } from './RootNav';
 import { connect } from 'react-redux';
 import SplashScreen from '../screens/SplashScreen';
+import TabsBar from '../components/TabsComponents';
 
 const Stack = createStackNavigator();
 
@@ -43,6 +44,7 @@ export class Route extends Component {
                     ) : (
                         <>
                         <Stack.Screen name="Login" component={LoginScreen} options={{headerShown : false}} />
+                        <Stack.Screen name="Dashboard" component={TabsBar} options={{headerShown : false}} />
                         <Stack.Screen name="Register" component={RegisterScreen} options={{headerShown : false}} />
                         </>
                     )
