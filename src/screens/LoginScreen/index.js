@@ -10,7 +10,7 @@ export class LoginScreen extends Component {
         return (
             <View>
                 <Text> LoginScreen </Text>
-                <Button title={"hello"} onPress={()=>{this.props.navigation.navigate('Register')}}></Button>
+                <Button title={"Dashboard"} onPress={()=>{this.props.navigation.navigate('Dashboard')}}></Button>
             </View>
         )
     }
