@@ -214,13 +214,14 @@ export class RegisterScreen extends Component {
               </Text>
             </Animated.View>
           </View>
-          <View
+          <TouchableOpacity
+            onPress={() => this.props.navigation.navigate('Login')}
             style={{flexDirection: 'row', marginTop: 10, marginLeft: 'auto'}}>
             <Text style={{marginRight: 13, fontSize: 16, marginTop: 2}}>
               Already have an account?
             </Text>
             <Icon name="long-arrow-right" color="#0044cc" size={30} />
-          </View>
+          </TouchableOpacity>
           <TouchableOpacity
             onPress={() => this.handleRegister()}
             style={{
