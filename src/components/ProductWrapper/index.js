@@ -3,6 +3,7 @@ import { Text, View, FlatList, Image, TouchableOpacity } from 'react-native'
 import style from './style'
 import HeaderTitleComponents from '../../components/HeaderTitleComponents'
 import StartComponet from '../../components/StarComponent'
+import * as RootNavigation from '../../routes/RootNav';
 
 export class ProductWrapper extends Component {
     constructor(props){
@@ -19,6 +20,7 @@ export class ProductWrapper extends Component {
                         renderItem={({ item: rowData }) => {
                         return (
                                 <TouchableOpacity
+                                    onPress={()=>{RootNavigation.navigate('Product',{name : 'T-Shert'})}}
                                     style={[{
                                         marginLeft : 8,
                                         marginRight : 8

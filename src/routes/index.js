@@ -9,7 +9,9 @@ import {connect} from 'react-redux';
 import ForgotPassword from '../screens/ForgotPasswordScreen/index';
 // import ResetPassword from '../screens/ResetPasswordScreen/index';
 import SplashScreen from '../screens/SplashScreen';
+import IonIcon from 'react-native-vector-icons/Ionicons'
 import TabsBar from '../components/TabsComponents';
+import ProductScreen from '../screens/ProductScreen';
 
 const Stack = createStackNavigator();
 
@@ -46,6 +48,23 @@ export class Route extends Component {
                   name="Dashboard"
                   component={TabsBar}
                   options={{headerShown: false}}
+                />
+                <Stack.Screen
+                  name="Product"
+                  component={ProductScreen}
+                  options={({ route,navigation }) => ({ 
+                  title: route.params.name,
+                  headerLeft : ()=> <IonIcon name={'chevron-back-outline'} size={25} onPress={()=>{navigation.goBack()}}/>,
+                  headerStyle: {
+                      elevation: 0,
+                      shadowOpacity: 0,
+                  },
+                  headerTitleStyle: {
+                    marginLeft : -50,
+                    fontFamily : 'Metropolis-Medium',
+                    alignSelf: 'center',
+                  },})}
+
                 />
             </>
           ) : (
