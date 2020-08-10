@@ -93,37 +93,11 @@ export class LoginScreen extends Component {
       }).start();
     } else {
     }
-  }
-  render() {
-    return (
-      <ScrollView style={{height: 500}}>
-        <View style={{marginLeft: 20, marginRight: 20}}>
-          <TouchableOpacity
-            onPress={() => this.props.navigation.navigate('Register')}>
-            <Icon
-              name="angle-left"
-              coloe="black"
-              style={{marginTop: 20}}
-              size={30}
-            />
-          </TouchableOpacity>
-
-          <Text style={{fontWeight: 'bold', fontSize: 32, marginTop: 30}}>
-            Sign In
-          </Text>
-          <View style={{marginTop: 50}}>
-            <View style={styles.boxShadow}>
-              <TextInput
-                style={{
-                  width: '100%',
-                  height: 40,
-                  marginTop: 14,
-                  marginLeft: 14,
-                }}
-                placeholder="Email"
-                onChangeText={(text) => this.setState({email: text})}
-                value={this.email}
-              />
+    render() {
+        return (
+            <View>
+                <Text> LoginScreen </Text>
+                <Button title={"Dashboard"} onPress={()=>{this.props.navigation.navigate('Dashboard')}}></Button>
             </View>
             {/* validate email */}
             <Animated.View

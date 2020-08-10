@@ -14,6 +14,7 @@ import TabsBar from '../components/TabsComponents';
 const Stack = createStackNavigator();
 
 export class Route extends Component {
+<<<<<<< HEAD
   constructor(props) {
     super(props);
     this.state = {
@@ -65,6 +66,49 @@ export class Route extends Component {
       </NavigationContainer>
     );
   }
+=======
+    constructor(props) {
+        super(props)
+        this.state = {
+            isLoad : false
+        }
+    }
+    componentDidMount(){
+        setTimeout(() => {
+            this.setState({
+                isLoad : true
+            })
+        }, 3000);
+    }
+    render() {
+        return (
+            <NavigationContainer  ref={navigationRef}>
+            <Stack.Navigator>
+                {
+                    this.state.isLoad ? (
+                        <>
+                        </>
+                    ) : (
+                        <Stack.Screen name="SplashScreen" component={SplashScreen} options={{headerShown : false}} />
+                    )
+                }
+                {
+                    this.props.user.isLogin ? (
+                        <>
+                        </>
+                    ) : (
+                        <>
+                        <Stack.Screen name="Login" component={LoginScreen} options={{headerShown : false}} />
+                        <Stack.Screen name="Dashboard" component={TabsBar} options={{headerShown : false}} />
+                        <Stack.Screen name="Register" component={RegisterScreen} options={{headerShown : false}} />
+                        </>
+                    )
+                }
+            </Stack.Navigator>
+            </NavigationContainer>
+        )
+    }
+>>>>>>> 9e49c64bf0e6e493f13145165265592f3ab6b528
 }
 
 const mapStateToProps = (state) => ({
