@@ -7,7 +7,7 @@ import LoginScreen from '../screens/LoginScreen';
 import {navigationRef} from './RootNav';
 import {connect} from 'react-redux';
 import ForgotPassword from '../screens/ForgotPasswordScreen/index';
-import ResetPassword from '../screens/ResetPasswordScreen/index';
+// import ResetPassword from '../screens/ResetPasswordScreen/index';
 import SplashScreen from '../screens/SplashScreen';
 import TabsBar from '../components/TabsComponents';
 
@@ -41,17 +41,18 @@ export class Route extends Component {
             />
           )}
           {this.props.user.isLogin ? (
-            <></>
+            <>
+                <Stack.Screen
+                  name="Dashboard"
+                  component={TabsBar}
+                  options={{headerShown: false}}
+                />
+            </>
           ) : (
             <>
               <Stack.Screen
                 name="Login"
                 component={LoginScreen}
-                options={{headerShown: false}}
-              />
-              <Stack.Screen
-                name="Dashboard"
-                component={TabsBar}
                 options={{headerShown: false}}
               />
               <Stack.Screen
