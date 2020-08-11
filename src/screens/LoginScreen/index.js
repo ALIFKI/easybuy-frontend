@@ -40,12 +40,14 @@ export class LoginScreen extends Component {
       // hide alert name
       Animated.timing(this.state.nameValidate, {
         toValue: 0,
+        useNativeDriver : false
       }).start();
       this.setState({marginBottomName: -14, marginTopName: 1});
       // =====================================================
       // show alert email
       Animated.timing(this.state.emailValidate, {
         toValue: 1,
+        useNativeDriver : false
       }).start();
       this.setState({marginBottomEmail: 4, marginTopEmail: 3});
     } else if (reg.test(this.state.email) === false) {
@@ -53,18 +55,21 @@ export class LoginScreen extends Component {
       // hide alert name
       Animated.timing(this.state.nameValidate, {
         toValue: 0,
+        useNativeDriver : false
       }).start();
       this.setState({marginBottomName: -14, marginTopName: 1});
       // ======================================================
       // hide alert email
       Animated.timing(this.state.emailValidate, {
         toValue: 0,
+        useNativeDriver : false
       }).start();
       this.setState({marginBottomEmail: -14, marginTopEmail: 1});
       // =======================================================
       // show alert emailRegex
       Animated.timing(this.state.emailValidateRegex, {
         toValue: 1,
+        useNativeDriver : false
       }).start();
       this.setState({marginBottomEmailRegex: 4, marginTopEmailRegex: 2});
     } else if (this.state.password === '') {
@@ -72,24 +77,28 @@ export class LoginScreen extends Component {
       // hide alert name
       Animated.timing(this.state.nameValidate, {
         toValue: 0,
+        useNativeDriver : false
       }).start();
       this.setState({marginBottomName: -14, marginTopName: 1});
       // ======================================================
       // hide alert email
       Animated.timing(this.state.emailValidate, {
         toValue: 0,
+        useNativeDriver : false
       }).start();
       this.setState({marginBottomEmail: -14, marginTopEmail: 1});
       // ======================================================
       // hide alert emailRegex
       Animated.timing(this.state.emailValidateRegex, {
         toValue: 0,
+        useNativeDriver : false
       }).start();
       this.setState({marginBottomEmailRegex: -14, marginTopEmailRegex: 1});
       // ======================================================
       // show password
       Animated.timing(this.state.passwordValidate, {
         toValue: 1,
+        useNativeDriver : false
       }).start();
     } else {
     }
@@ -201,7 +210,7 @@ export class LoginScreen extends Component {
               marginTop: 20,
             }}>
             <Text style={{textAlign: 'center', marginTop: 14, color: 'white'}}>
-              Sign Up
+              Sign In
             </Text>
           </TouchableOpacity>
         </View>
@@ -210,9 +219,6 @@ export class LoginScreen extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({
-  register,
-});
 const mapDispatchToProp = {register};
 
-export default connect(mapStateToProps, mapDispatchToProp)(LoginScreen);
+export default connect(null,mapDispatchToProp)(LoginScreen);
