@@ -7,8 +7,16 @@ import { TouchableOpacity } from 'react-native-gesture-handler'
 import image from '../../assets/image/banner.png'
 import StartComponet from '../../components/StarComponent'
 import CardShop from '../../components/CardShopComponent'
+import ModalSort from '../../components/ModalSort'
+import FilterBtn from '../../components/FilterBtn'
 
 class ShopScreen extends Component {
+    constructor(props){
+        super(props)
+        this.state = {
+            ModalSort : false
+        }
+    }
     render() {
         return (
             <ScrollView>
@@ -19,22 +27,18 @@ class ShopScreen extends Component {
                     </View>
                     <HeaderTitleComponents title={'Women Top'}/>
                     <View style={style.filter}>
-                        <TouchableOpacity style={style.action}>
-                            <IonIcon name={'filter-outline'} size={25}/>
-                            <Text style={{marginLeft : 10}}>Filter</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity style={style.action}>
-                            <IonIcon name={'swap-vertical-outline'} size={25}/>
-                            <Text style={{marginLeft : 10}}>Price : Low To Hight</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity style={style.action}>
-                            <IonIcon name={'filter-outline'} size={25}/>
-                        </TouchableOpacity>
+                        <FilterBtn text={'Filter'} icon={'filter-outline'}/>
+                        <FilterBtn text={'Price : Low To Hight'} icon={'swap-vertical-outline'} onPress={()=>{this.setState({ModalSort:true})}}/>
+                        <FilterBtn text={''} icon={'filter-outline'}/>
                     </View>
                 </View>
                 <View style={style.mainContent} >
                     <CardShop></CardShop>
                 </View>
+                {/* Components */}
+                <ModalSort visible={this.state.ModalSort} onClose={()=>{this.setState({
+                    ModalSort : false
+                })}}/>
             </ScrollView>
         )
     }
