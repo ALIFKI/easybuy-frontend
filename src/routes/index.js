@@ -15,6 +15,7 @@ import ProductScreen from '../screens/ProductScreen';
 import FilterScreen from '../screens/FilterScreen';
 import OtpScreen from '../screens/OtpScreen';
 import CheckoutScrenn from '../screens/CheckoutScreen';
+import { SearchScreen } from '../screens/SearchScreen';
 
 const Stack = createStackNavigator();
 
@@ -156,6 +157,11 @@ export class Route extends Component {
                   alignSelf: 'center',
                 },
               })}
+            />
+            <Stack.Screen
+              name="Search"
+              component={SearchScreen}
+              options={{headerShown : false}}
             />
           </>
           ) : (

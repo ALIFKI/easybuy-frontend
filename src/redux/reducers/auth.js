@@ -4,7 +4,7 @@ const initialState = {
     errorMsg : '' ,
     successMsg : 'Helloo',
     auth : {},
-    isLogin : false,
+    isLogin : true,
 }
 
 const auth = (state = initialState,action) =>{

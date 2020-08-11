@@ -24,7 +24,10 @@ class ShopScreen extends Component {
                 <View style={style.header}>
                     <View style={style.topNav}>
                         <IonIcon name={'chevron-back-outline'} size={25}/>
-                        <IonIcon name={'search-outline'} size={25}/>
+                        <TouchableOpacity
+                        onPress={()=>{this.props.navigation.navigate('Search')}}>
+                            <IonIcon name={'search-outline'} size={25}/>
+                        </TouchableOpacity>
                     </View>
                     <HeaderTitleComponents title={'Women Top'}/>
                     <View style={style.filter}>
