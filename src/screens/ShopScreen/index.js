@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Text, View, ScrollView, Image } from 'react-native'
+import { Text, View, ScrollView, Image, StatusBar } from 'react-native'
 import style from './style'
 import IonIcon from 'react-native-vector-icons/Ionicons'
 import HeaderTitleComponents from '../../components/HeaderTitleComponents'
@@ -20,6 +20,7 @@ class ShopScreen extends Component {
     render() {
         return (
             <ScrollView>
+                <StatusBar backgroundColor={'#fff'} barStyle='dark-content'/>
                 <View style={style.header}>
                     <View style={style.topNav}>
                         <IonIcon name={'chevron-back-outline'} size={25}/>
@@ -27,7 +28,7 @@ class ShopScreen extends Component {
                     </View>
                     <HeaderTitleComponents title={'Women Top'}/>
                     <View style={style.filter}>
-                        <FilterBtn text={'Filter'} icon={'filter-outline'}/>
+                        <FilterBtn text={'Filter'} icon={'filter-outline'} onPress={()=>{this.props.navigation.navigate('Filter')}}/>
                         <FilterBtn text={'Price : Low To Hight'} icon={'swap-vertical-outline'} onPress={()=>{this.setState({ModalSort:true})}}/>
                         <FilterBtn text={''} icon={'filter-outline'}/>
                     </View>

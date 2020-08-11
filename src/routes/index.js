@@ -12,6 +12,7 @@ import SplashScreen from '../screens/SplashScreen';
 import IonIcon from 'react-native-vector-icons/Ionicons';
 import TabsBar from '../components/TabsComponents';
 import ProductScreen from '../screens/ProductScreen';
+import FilterScreen from '../screens/FilterScreen';
 
 const Stack = createStackNavigator();
 
@@ -54,6 +55,38 @@ export class Route extends Component {
               component={ProductScreen}
               options={({route, navigation}) => ({
                 title: route.params.name,
+                headerLeft: () => (
+                  <IonIcon
+                    name={'chevron-back-outline'}
+                    size={25}
+                    onPress={() => {
+                      navigation.goBack();
+                    }}
+                  />
+                ),
+                headerStyle: {
+                  shadowColor: "#000",
+                  shadowOffset: {
+                    width: 0,
+                    height: 4,
+                  },
+                  shadowOpacity: 0.30,
+                  shadowRadius: 4.65,
+
+                  elevation: 8,
+                },
+                headerTitleStyle: {
+                  marginLeft: -50,
+                  fontFamily: 'Metropolis-Medium',
+                  alignSelf: 'center',
+                },
+              })}
+            />
+            <Stack.Screen
+              name="Filter"
+              component={FilterScreen}
+              options={({route, navigation}) => ({
+                title: 'Filter',
                 headerLeft: () => (
                   <IonIcon
                     name={'chevron-back-outline'}

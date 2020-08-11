@@ -16,7 +16,7 @@ export default function TabsBar() {
     <Tab.Navigator
       tabBarOptions={{
         showLabel: false,
-        activeTintColor: 'black', // active icon color
+        activeTintColor: '#273AC7', // active icon color
         inactiveTintColor: '#E0E0E0', // inactive icon color
         style: {
           backgroundColor: '#FFF',
@@ -31,7 +31,7 @@ export default function TabsBar() {
         component={HomeScreen}
         options={{
           tabBarIcon: ({color, size}) => (
-            <Ion name="home-outline" color={color} size={size} />
+            <Ion name="home" color={color} size={size} />
           ),
         }}
       />
