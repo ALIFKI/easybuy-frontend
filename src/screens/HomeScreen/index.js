@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Text, View, Image, FlatList, ScrollView,TouchableOpacity } from 'react-native'
+import { Text, View, Image, FlatList, ScrollView,TouchableOpacity, StatusBar } from 'react-native'
 import style from './style'
 import image from '../../assets/image/banner.png'
 import {Card} from 'galio-framework'
@@ -34,6 +34,7 @@ class HomeScreen extends Component {
     render() {
         return (
             <ScrollView>
+                {/* <StatusBar backgroundColor={'transparent'}/> */}
                 <View style={style.bannerContent}>
                     <Image source={image}/>
                     <Text style={[style.title]}>Street Clothes</Text>

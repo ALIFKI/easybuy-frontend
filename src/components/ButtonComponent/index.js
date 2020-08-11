@@ -8,19 +8,48 @@ class Button extends Component {
     render() {
         return (
             <>
-            <TouchableOpacity
-                onPress={this.props.onPress}
-                style={{
-                backgroundColor: '#273AC7',
-                height: 45,
-                width: '100%',
-                borderRadius: 100,
-                marginTop: 20,
-                }}>
-                    <Text style={{textAlign: 'center', marginTop: 14, color: 'white'}}>
-                       { this.props.text }
-                    </Text>
-            </TouchableOpacity>
+            {
+                this.props.outline ? (
+                    <TouchableOpacity
+                    onPress={this.props.onPress}
+                    style={{
+                    display : 'flex',
+                    flexDirection : 'column',
+                    justifyContent : 'center',
+                    alignItems : 'center',
+                    backgroundColor: '#fff',
+                    borderWidth : 1,
+                    height: 45,
+                    width: '100%',
+                    borderRadius: 100,
+                    // marginTop: 20,
+                    }}>
+                        <Text style={{textAlign: 'center',color: 'black',
+                    paddingLeft : 30,paddingRight : 30}}>
+                           { this.props.text }
+                        </Text>
+                </TouchableOpacity>
+                ): (
+                    <TouchableOpacity
+                    onPress={this.props.onPress}
+                    style={{
+                    display : 'flex',
+                    flexDirection : 'column',
+                    justifyContent : 'center',
+                    alignItems : 'center',
+                    backgroundColor: '#273AC7',
+                    height: 45,
+                    width: '100%',
+                    borderRadius: 100,
+                    // marginTop: 20,
+                    }}>
+                        <Text style={{textAlign: 'center',color: 'white',
+                    paddingLeft : 30,paddingRight : 30}}>
+                           { this.props.text }
+                        </Text>
+                </TouchableOpacity>
+                )
+            }
             </>
         )
     }
