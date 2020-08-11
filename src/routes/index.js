@@ -7,9 +7,9 @@ import LoginScreen from '../screens/LoginScreen';
 import {navigationRef} from './RootNav';
 import {connect} from 'react-redux';
 import ForgotPassword from '../screens/ForgotPasswordScreen/index';
-// import ResetPassword from '../screens/ResetPasswordScreen/index';
+import ResetPassword from '../screens/ResetPasswordScreen/index';
 import SplashScreen from '../screens/SplashScreen';
-import IonIcon from 'react-native-vector-icons/Ionicons'
+import IonIcon from 'react-native-vector-icons/Ionicons';
 import TabsBar from '../components/TabsComponents';
 import ProductScreen from '../screens/ProductScreen';
 
@@ -42,47 +42,65 @@ export class Route extends Component {
               options={{headerShown: false}}
             />
           )}
-          {this.props.user.isLogin ? (
-            <>
-                <Stack.Screen
-                  name="Dashboard"
-                  component={TabsBar}
-                  options={{headerShown: false}}
-                />
-                <Stack.Screen
-                  name="Product"
-                  component={ProductScreen}
-                  options={({ route,navigation }) => ({ 
-                  title: route.params.name,
-                  headerLeft : ()=> <IonIcon name={'chevron-back-outline'} size={25} onPress={()=>{navigation.goBack()}}/>,
-                  headerStyle: {
-                      elevation: 0,
-                      shadowOpacity: 0,
-                  },
-                  headerTitleStyle: {
-                    marginLeft : -50,
-                    fontFamily : 'Metropolis-Medium',
-                    alignSelf: 'center',
-                  },})}
-                />
-                <Stack.Screen
-                  name="Shop"
-                  component={ProductScreen}
-                  options={({ route,navigation }) => ({
-                  headerLeft : ()=> <IonIcon name={'chevron-back-outline'} size={25} onPress={()=>{navigation.goBack()}}/>,
-                  headerStyle: {
-                      elevation: 0,
-                      shadowOpacity: 0,
-                  },
-                  headerTitleStyle: {
-                    marginLeft : -50,
-                    fontFamily : 'Metropolis-Medium',
-                    alignSelf: 'center',
-                  },})}
-                />
-            </>
-          ) : (
-            <>
+          {/* {this.props.user.isLogin ? ( */}
+          <>
+            <Stack.Screen
+              name="Dashboard"
+              component={TabsBar}
+              options={{headerShown: false}}
+            />
+            <Stack.Screen
+              name="Product"
+              component={ProductScreen}
+              options={({route, navigation}) => ({
+                title: route.params.name,
+                headerLeft: () => (
+                  <IonIcon
+                    name={'chevron-back-outline'}
+                    size={25}
+                    onPress={() => {
+                      navigation.goBack();
+                    }}
+                  />
+                ),
+                headerStyle: {
+                  elevation: 0,
+                  shadowOpacity: 0,
+                },
+                headerTitleStyle: {
+                  marginLeft: -50,
+                  fontFamily: 'Metropolis-Medium',
+                  alignSelf: 'center',
+                },
+              })}
+            />
+            <Stack.Screen
+              name="Shop"
+              component={ProductScreen}
+              options={({route, navigation}) => ({
+                headerLeft: () => (
+                  <IonIcon
+                    name={'chevron-back-outline'}
+                    size={25}
+                    onPress={() => {
+                      navigation.goBack();
+                    }}
+                  />
+                ),
+                headerStyle: {
+                  elevation: 0,
+                  shadowOpacity: 0,
+                },
+                headerTitleStyle: {
+                  marginLeft: -50,
+                  fontFamily: 'Metropolis-Medium',
+                  alignSelf: 'center',
+                },
+              })}
+            />
+          </>
+          {/* ) : ( */}
+          {/* <>
               <Stack.Screen
                 name="Login"
                 component={LoginScreen}
@@ -103,8 +121,8 @@ export class Route extends Component {
                 component={ResetPassword}
                 options={{headerShown: false}}
               />
-            </>
-          )}
+            </> */}
+          {/* )} */}
         </Stack.Navigator>
       </NavigationContainer>
     );
