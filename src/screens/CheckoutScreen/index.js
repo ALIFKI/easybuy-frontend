@@ -2,11 +2,21 @@ import React, {Component} from 'react';
 import {Text, View, ScrollView, Image, CheckBox} from 'react-native';
 import style from './style';
 import {TouchableOpacity} from 'react-native-gesture-handler';
+import RadioForm, {
+  RadioButton,
+  RadioButtonInput,
+  RadioButtonLabel,
+} from 'react-native-simple-radio-button';
 
 class CheckoutScreen extends Component {
   constructor(props) {
     super(props);
   }
+
+  radio_props1 = [{value: 0}];
+
+  radio_props2 = [{value: 1}];
+
   render() {
     return (
       <ScrollView style={style.container}>
@@ -29,37 +39,84 @@ class CheckoutScreen extends Component {
 
         <View style={{marginTop: 20}}>
           <Text style={style.textHeader}>Payment</Text>
-          <View
-            style={[
-              {
-                height: 24,
-                width: 24,
-                borderRadius: 12,
-                borderWidth: 2,
-                borderColor: '#000',
-                alignItems: 'center',
-                justifyContent: 'center',
-              },
-              props.style,
-            ]}>
-            {props.selected ? (
-              <View
-                style={{
-                  height: 12,
-                  width: 12,
-                  borderRadius: 6,
-                  backgroundColor: '#000',
-                }}
-              />
-            ) : null}
-          </View>
+
           <View style={{flexDirection: 'row'}}>
             <Image
               style={{width: 40, height: 40, marginTop: 13}}
               source={require('../../image/download.png')}
             />
             <Text style={{marginLeft: 38, marginTop: 29}}>Master Card</Text>
+            <RadioForm
+              style={{marginLeft: 'auto', marginTop: 19}}
+              radio_props={this.radio_props1}
+              initial={0}
+              buttonColor={'#003399'}
+            />
           </View>
+
+          <View style={{flexDirection: 'row'}}>
+            <Image
+              style={{width: 40, height: 40, marginTop: 13}}
+              source={require('../../image/pos_indonesia.png')}
+            />
+            <Text style={{marginLeft: 38, marginTop: 29}}>
+              Kantor Pos Indonesia
+            </Text>
+            <RadioForm
+              style={{marginLeft: 'auto', marginTop: 19}}
+              radio_props={this.radio_props2}
+              initial={1}
+              buttonColor={'#003399'}
+            />
+          </View>
+
+          <View style={{flexDirection: 'row'}}>
+            <Image
+              style={{width: 40, height: 40, marginTop: 13}}
+              source={require('../../image/logoGopay.jpeg')}
+            />
+            <Text style={{marginLeft: 38, marginTop: 29}}>Go Pay</Text>
+            <RadioForm
+              style={{marginLeft: 'auto', marginTop: 19}}
+              radio_props={this.radio_props2}
+              initial={1}
+              buttonColor={'#003399'}
+            />
+          </View>
+
+          <View style={{marginTop: 40, flexDirection: 'row'}}>
+            <Text style={{color: 'gray'}}>Order</Text>
+            <Text style={{marginLeft: 'auto', fontWeight: 'bold'}}>30$</Text>
+          </View>
+
+          <View style={{marginTop: 20, flexDirection: 'row'}}>
+            <Text style={{color: 'gray'}}>Delivery</Text>
+            <Text style={{marginLeft: 'auto', fontWeight: 'bold'}}>30$</Text>
+          </View>
+
+          <View style={{marginTop: 20, flexDirection: 'row'}}>
+            <Text style={{color: 'gray'}}>Summary</Text>
+            <Text style={{marginLeft: 'auto', fontWeight: 'bold'}}>60$</Text>
+          </View>
+        </View>
+        <View
+          style={{
+            backgroundColor: '#003399',
+            width: '100%',
+            height: 50,
+            borderRadius: 50,
+            marginTop: 40,
+            marginBottom: 9,
+          }}>
+          <Text
+            style={{
+              textAlign: 'center',
+              color: 'white',
+              fontSize: 20,
+              marginTop: 10,
+            }}>
+            Submit Orders
+          </Text>
         </View>
       </ScrollView>
     );

@@ -6,6 +6,7 @@ const style = StyleSheet.create({
     marginLeft: 13,
     marginTop: 12,
     marginRight: 13,
+    height: 100,
   },
   textHeader: {
     fontWeight: 'bold',
@@ -15,7 +16,7 @@ const style = StyleSheet.create({
   card: {
     width: '100%',
     backgroundColor: 'white',
-    height: 120,
+    height: 100,
     marginTop: 30,
     shadowColor: '#000',
     shadowOffset: {
