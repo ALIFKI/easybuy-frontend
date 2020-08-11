@@ -5,7 +5,7 @@ import HeaderTitleComponents from '../../components/HeaderTitleComponents'
 import StartComponet from '../../components/StarComponent'
 import * as RootNavigation from '../../routes/RootNav';
 
-export class ProductWrapper extends Component {
+class ProductWrapper extends Component {
     constructor(props){
         super(props)
     }

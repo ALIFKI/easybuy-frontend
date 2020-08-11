@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { Text, View } from 'react-native'
-import IonIcon from 'react-native-vector-icons/Ionicons'
+import IonIcon from 'react-native-vector-icons/FontAwesome'
 import style from './style'
 
-export class StartComponet extends Component {
+class StartComponet extends Component {
     constructor(props){
         super(props)
     }
@@ -13,7 +13,7 @@ export class StartComponet extends Component {
             <View style={style.content}>
                 {
                     star.map((row,index)=>{
-                        return <IonIcon key={index} name={"star-outline"} size={12} color={'#9B9B9B'}/> 
+                        return <IonIcon key={index} name={"star-o"} size={12} color={'#9B9B9B'} style={{marginLeft : 2}}/> 
                     })
                 }
                 <Text style={style.count}>

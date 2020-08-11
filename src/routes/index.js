@@ -64,7 +64,21 @@ export class Route extends Component {
                     fontFamily : 'Metropolis-Medium',
                     alignSelf: 'center',
                   },})}
-
+                />
+                <Stack.Screen
+                  name="Shop"
+                  component={ProductScreen}
+                  options={({ route,navigation }) => ({
+                  headerLeft : ()=> <IonIcon name={'chevron-back-outline'} size={25} onPress={()=>{navigation.goBack()}}/>,
+                  headerStyle: {
+                      elevation: 0,
+                      shadowOpacity: 0,
+                  },
+                  headerTitleStyle: {
+                    marginLeft : -50,
+                    fontFamily : 'Metropolis-Medium',
+                    alignSelf: 'center',
+                  },})}
                 />
             </>
           ) : (

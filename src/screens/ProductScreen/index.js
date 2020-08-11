@@ -2,11 +2,11 @@ import React, { Component } from 'react'
 import { Text, View, Image, TouchableOpacity, TextInput } from 'react-native'
 import style from './style'
 import { ScrollView,  } from 'react-native-gesture-handler'
-import image from '../../assets/image/banner.png'
+import image from '../../assets/image/banner2.png'
 import IonIcon from 'react-native-vector-icons/Ionicons'
 import Button from '../../components/ButtonComponent'
 
-export class ProductScreen extends Component {
+class ProductScreen extends Component {
     render() {
         return (
             <>
