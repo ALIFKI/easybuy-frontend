@@ -7,6 +7,7 @@ import AwsemIcon from 'react-native-vector-icons/FontAwesome'
 import { connect } from 'react-redux'
 import HomeScreen from '../../screens/HomeScreen'
 import CartScreen from '../../screens/CartScreen'
+import ShopScreen from '../../screens/ShopScreen';
 
 
 const Tab = createBottomTabNavigator()
@@ -29,16 +30,16 @@ export default function TabsBar() {
             <Ion name="home-outline" color={color} size={size}/>
         )}}
         />
+        <Tab.Screen name="Shop" component={ShopScreen} options={{
+            tabBarIcon : ({color,size})=>(
+            <Ion name="cart-outline" color={color} size={size}/>
+        )}}
+        />
         <Tab.Screen name="Cart" component={CartScreen} options={{
             tabBarIcon : ({color,size})=>(
             <Ion name="cart-outline" color={color} size={size}/>
         )}}
         />
-        {/* <Tab.Screen name="Profile" component={ProfileScreen} options={{
-            tabBarIcon : ({color,size})=>(
-            <Ion name="settings-sharp" color={color} size={size}/>
-        )}}
-        /> */}
       </Tab.Navigator>
     )
 }

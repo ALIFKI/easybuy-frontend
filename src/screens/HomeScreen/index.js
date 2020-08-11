@@ -7,7 +7,7 @@ import ProductWrapper from '../../components/ProductWrapper'
 import HeaderTitleComponents from '../../components/HeaderTitleComponents'
 
 
-export class HomeScreen extends Component {
+class HomeScreen extends Component {
     constructor(){
         super()
         this.state = {

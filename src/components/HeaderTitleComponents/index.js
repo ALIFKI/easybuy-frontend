@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import { Text, View } from 'react-native'
 import style from './style'
 import { TouchableOpacity } from 'react-native-gesture-handler'
-export class HeaderTitleComponents extends Component {
+
+class HeaderTitleComponents extends Component {
     constructor(props){
         super(props)
     }
