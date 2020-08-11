@@ -13,6 +13,7 @@ import IonIcon from 'react-native-vector-icons/Ionicons';
 import TabsBar from '../components/TabsComponents';
 import ProductScreen from '../screens/ProductScreen';
 import FilterScreen from '../screens/FilterScreen';
+import OtpScreen from '../screens/OtpScreen';
 
 const Stack = createStackNavigator();
 
@@ -43,7 +44,7 @@ export class Route extends Component {
               options={{headerShown: false}}
             />
           )}
-          {/* {this.props.user.isLogin ? ( */}
+          {this.props.user.isLogin ? (
           <>
             <Stack.Screen
               name="Dashboard"
@@ -132,8 +133,8 @@ export class Route extends Component {
               })}
             />
           </>
-          {/* ) : ( */}
-          {/* <>
+          ) : (
+            <>
               <Stack.Screen
                 name="Login"
                 component={LoginScreen}
@@ -142,6 +143,11 @@ export class Route extends Component {
               <Stack.Screen
                 name="Register"
                 component={RegisterScreen}
+                options={{headerShown: false}}
+              />
+              <Stack.Screen
+                name="Otp"
+                component={OtpScreen}
                 options={{headerShown: false}}
               />
               <Stack.Screen
@@ -154,8 +160,8 @@ export class Route extends Component {
                 component={ResetPassword}
                 options={{headerShown: false}}
               />
-            </> */}
-          {/* )} */}
+            </>
+          )}
         </Stack.Navigator>
       </NavigationContainer>
     );
