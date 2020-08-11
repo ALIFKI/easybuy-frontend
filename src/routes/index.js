@@ -13,6 +13,7 @@ import IonIcon from 'react-native-vector-icons/Ionicons';
 import TabsBar from '../components/TabsComponents';
 import ProductScreen from '../screens/ProductScreen';
 import FilterScreen from '../screens/FilterScreen';
+import CheckoutScrenn from '../screens/CheckoutScreen';
 
 const Stack = createStackNavigator();
 
@@ -65,12 +66,12 @@ export class Route extends Component {
                   />
                 ),
                 headerStyle: {
-                  shadowColor: "#000",
+                  shadowColor: '#000',
                   shadowOffset: {
                     width: 0,
                     height: 4,
                   },
-                  shadowOpacity: 0.30,
+                  shadowOpacity: 0.3,
                   shadowRadius: 4.65,
 
                   elevation: 8,
@@ -123,6 +124,30 @@ export class Route extends Component {
                 headerStyle: {
                   elevation: 0,
                   shadowOpacity: 0,
+                },
+                headerTitleStyle: {
+                  marginLeft: -50,
+                  fontFamily: 'Metropolis-Medium',
+                  alignSelf: 'center',
+                },
+              })}
+            />
+            <Stack.Screen
+              name="CheckOut"
+              component={CheckoutScrenn}
+              options={({route, navigation}) => ({
+                headerLeft: () => (
+                  <IonIcon
+                    name={'chevron-back-outline'}
+                    size={25}
+                    onPress={() => {
+                      navigation.goBack();
+                    }}
+                  />
+                ),
+                headerStyle: {
+                  elevation: 1,
+                  shadowOpacity: 1,
                 },
                 headerTitleStyle: {
                   marginLeft: -50,
