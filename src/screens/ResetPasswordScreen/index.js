@@ -6,11 +6,13 @@ import {
   TextInput,
   TouchableOpacity,
   Animated,
+  Alert,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import styles from './style/';
 import {connect} from 'react-redux';
-import {register} from '../../redux/actions/auth';
+import {Reset} from '../../redux/actions/auth';
+import Axios from 'axios';
 export class ResetPassword extends Component {
   constructor(props) {
     super(props);
@@ -30,13 +32,46 @@ export class ResetPassword extends Component {
       Animated.timing(this.state.password1Validate, {
         toValue: 1,
       }).start();
-    } else if (this.state.password1 != this.state.password2) {
+    } else if (this.state.password1 !== this.state.password2) {
       Animated.timing(this.state.password1Validate, {
         toValue: 0,
       }).start();
       Animated.timing(this.state.samePassword, {
         toValue: 1,
       }).start();
+    }
+    else{
+      console.log(this.props.route.email)
+      var data = {
+        email : this.props.route.params.email,
+        password : this.state.password2
+      }
+      this.props.Reset(data).then((res)=>{
+        Alert.alert(
+          'Done !!',
+          'Password has been Reset',
+          [
+            {text : 'OK' ,onPress : ()=>{this.props.navigation.navigate('Login')}}
+          ],
+          {
+            cancelable : false
+          }
+
+        )
+      }).catch((err)=>{
+        console.log(err.response.data.data)
+        Alert.alert(
+          'Oopps !!',
+          'Check The password again',
+          [
+            {text : 'OK' ,onPress : ()=>{console.log('ok')}}
+          ],
+          {
+            cancelable : false
+          }
+
+        )
+      })
     }
   }
   render() {
@@ -133,8 +168,7 @@ export class ResetPassword extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  register,
 });
-const mapDispatchToProp = {register};
+const mapDispatchToProp = {Reset};
 
 export default connect(mapStateToProps, mapDispatchToProp)(ResetPassword);

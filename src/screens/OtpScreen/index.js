@@ -116,7 +116,7 @@ export class OtpScreen extends Component {
               'Done !!',
               'OTP is correct',
               [
-                { text: 'OK', onPress: () => this.props.navigation.navigate('ResetPassword') }
+                { text: 'OK', onPress: () => this.props.navigation.navigate('ResetPassword',{email : this.props.route.params.email}) }
               ],
               { cancelable: false }
             );
@@ -142,7 +142,7 @@ export class OtpScreen extends Component {
           }).then((res)=>{
             Alert.alert(
               'Done !!',
-              'Actiovation Success!! Lets Login',
+              'Activation Success!! Lets Login',
               [
                 { text: 'OK', onPress: () => this.props.navigation.navigate('Login') }
               ],
