@@ -12,7 +12,9 @@ class MyOrders extends Component {
       <View style={{width: '100%', height: '100%', backgroundColor: 'white'}}>
         <ScrollView style={style.container}>
           <Text style={{fontWeight: 'bold', fontSize: 30}}>My Orders</Text>
-          <View style={style.Card}>
+          <TouchableOpacity 
+          onPress={()=>{this.props.navigation.navigate('OrderDetail')}}
+          style={style.Card}>
             <View style={{marginLeft: 13}}>
               <Text
                 style={{
@@ -71,7 +73,7 @@ class MyOrders extends Component {
               }}>
               5 jul 2001
             </Text>
-          </View>
+          </TouchableOpacity>
         </ScrollView>
       </View>
     );
