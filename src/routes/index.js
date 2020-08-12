@@ -14,8 +14,9 @@ import TabsBar from '../components/TabsComponents';
 import ProductScreen from '../screens/ProductScreen';
 import FilterScreen from '../screens/FilterScreen';
 import OtpScreen from '../screens/OtpScreen';
-import CheckoutScrenn from '../screens/CheckoutScreen';
-import { SearchScreen } from '../screens/SearchScreen';
+import CheckoutScreen from '../screens/CheckoutScreen';
+import ShippingAddreess from '../screens/ShippingAdressScreen';
+import {SearchScreen} from '../screens/SearchScreen';
 
 const Stack = createStackNavigator();
 
@@ -46,7 +47,7 @@ export class Route extends Component {
               options={{headerShown: false}}
             />
           )}
-          {this.props.user.isLogin ? (
+          {/* {this.props.user.isLogin ? ( */}
           <>
             <Stack.Screen
               name="Dashboard"
@@ -136,7 +137,57 @@ export class Route extends Component {
             />
             <Stack.Screen
               name="CheckOut"
-              component={CheckoutScrenn}
+              component={CheckoutScreen}
+              options={({route, navigation}) => ({
+                headerLeft: () => (
+                  <IonIcon
+                    name={'chevron-back-outline'}
+                    size={25}
+                    onPress={() => {
+                      navigation.goBack();
+                    }}
+                  />
+                ),
+                headerStyle: {
+                  elevation: 1,
+                  shadowOpacity: 1,
+                },
+                headerTitleStyle: {
+                  marginLeft: -50,
+                  fontFamily: 'Metropolis-Medium',
+                  alignSelf: 'center',
+                },
+              })}
+            />
+
+            <Stack.Screen
+              name="ShipingAddress"
+              component={ShippingAddreess}
+              options={({route, navigation}) => ({
+                headerLeft: () => (
+                  <IonIcon
+                    name={'chevron-back-outline'}
+                    size={25}
+                    onPress={() => {
+                      navigation.goBack();
+                    }}
+                  />
+                ),
+                headerStyle: {
+                  elevation: 1,
+                  shadowOpacity: 1,
+                },
+                headerTitleStyle: {
+                  marginLeft: -50,
+                  fontFamily: 'Metropolis-Medium',
+                  alignSelf: 'center',
+                },
+              })}
+            />
+
+            <Stack.Screen
+              name="ChangeShippingAddress"
+              component={ShippingAddreess}
               options={({route, navigation}) => ({
                 headerLeft: () => (
                   <IonIcon
@@ -161,11 +212,11 @@ export class Route extends Component {
             <Stack.Screen
               name="Search"
               component={SearchScreen}
-              options={{headerShown : false}}
+              options={{headerShown: false}}
             />
           </>
-          ) : (
-            <>
+          {/* ) : ( */}
+          {/* <>
               <Stack.Screen
                 name="Login"
                 component={LoginScreen}
@@ -191,8 +242,8 @@ export class Route extends Component {
                 component={ResetPassword}
                 options={{headerShown: false}}
               />
-            </>
-          )}
+            </> */}
+          {/* )} */}
         </Stack.Navigator>
       </NavigationContainer>
     );
