@@ -38,7 +38,7 @@ export default function TabsBar() {
       />
 
       <Tab.Screen
-        name="Shop"
+        name="All"
         component={ShopScreen}
         options={{
           tabBarIcon: ({color, size}) => (

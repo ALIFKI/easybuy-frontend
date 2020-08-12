@@ -30,11 +30,17 @@ export default class ModalSort extends Component {
                         style={style.listSort}
                             sections={[
                                 {data: [
-                                    {name : 'Popular',value : '1'},
-                                    {name : 'News',value : '2'},]},
+                                    {name : 'Popular',value : 'popular'},
+                                    {name : 'Price Low to Hight',value : 'price-low'},
+                                    {name : 'Price Hight to Low',value : 'price-high'},
+                                    {name : 'News',value : 'newest'},]},
                             ]}
-                            renderItem={({item}) => 
-                            <ItemList item={item}/>
+                            renderItem={({item}) =>
+                            <TouchableOpacity
+                                onPress={()=>{console.log('res')}}
+                            >
+                            <ItemList item={item} sort={this.props.sort()}/>
+                            </TouchableOpacity>
                                 }
                             keyExtractor={(item, index) => index}
                             />

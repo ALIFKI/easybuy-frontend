@@ -34,8 +34,7 @@ class HomeScreen extends Component {
     await this.setState({
       sort: 'newest',
     });
-    const token =
-      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoyOSwibmFtZSI6ImFiaSIsImVtYWlsIjoiYWJpLnZhcmRoYW5hQG91dGxvb2suY29tIiwiYmlydGhkYXkiOiIyMDAyLTA1LTIwVDE3OjAwOjAwLjAwMFoiLCJpbWFnZSI6ImRlZmF1bHQuanBnIiwiaXNfYWN0aXZlIjoxLCJjcmVhdGVkX2F0IjoiMjAyMC0wOC0xMVQxMzo0MDo1OC4wMDBaIiwidXBkYXRlZF9hdCI6bnVsbH0sImlhdCI6MTU5NzIyOTEwMiwiZXhwIjoxNTk3MzE1NTAyfQ.IKqEmbxILtU-egQ8gT71jN2Ne2WjWkVXPfsmc82i9mA';
+    const token = this.props.user.auth.token
     const {page, search, category, size, color, sort} = this.state;
     this.props
       .getProduct(token, page, search, category, size, color, sort)
@@ -52,8 +51,7 @@ class HomeScreen extends Component {
     await this.setState({
       sort: 'popular',
     });
-    const token =
-      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoyOSwibmFtZSI6ImFiaSIsImVtYWlsIjoiYWJpLnZhcmRoYW5hQG91dGxvb2suY29tIiwiYmlydGhkYXkiOiIyMDAyLTA1LTIwVDE3OjAwOjAwLjAwMFoiLCJpbWFnZSI6ImRlZmF1bHQuanBnIiwiaXNfYWN0aXZlIjoxLCJjcmVhdGVkX2F0IjoiMjAyMC0wOC0xMVQxMzo0MDo1OC4wMDBaIiwidXBkYXRlZF9hdCI6bnVsbH0sImlhdCI6MTU5NzIyOTEwMiwiZXhwIjoxNTk3MzE1NTAyfQ.IKqEmbxILtU-egQ8gT71jN2Ne2WjWkVXPfsmc82i9mA';
+    const token = this.props.user.auth.token
     const {page, search, category, size, color, sort} = this.state;
     this.props
       .getProduct(token, page, search, category, size, color, sort)

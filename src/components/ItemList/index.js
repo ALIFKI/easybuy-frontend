@@ -13,7 +13,7 @@ export default class ItemList extends Component {
         return (
             <TouchableHighlight 
             underlayColor={'#273AC7'}
-            onPress={()=>{console.log('res')}}
+            onPress={()=>{this.props.sort(this.props.item)}}
             onPressIn={()=>{this.setState({color : 'white'})}}
             onPressOut={()=>{this.setState({color : null})}}
             style={style.list}

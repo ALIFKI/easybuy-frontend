@@ -3,24 +3,30 @@ import { Text, View, Image } from 'react-native'
 import image from '../../assets/image/banner.png'
 import StartComponet from '../../components/StarComponent'
 import style from './style'
+import {API_URL} from '@env'
 class CardShop extends Component {
     constructor(props) {
         super(props)
     }
     render() {
+        let maxlimit = 17
         return (
                 <View style={style.cardProduct}>
-                    <Image source={image} style={style.image}/>
+                    <Image source={{uri: API_URL + 'img/' + this.props.data.image}} style={style.image}/>
                     <View style={style.detail}>
-                        <Text style={style.type}>
-                            Pull Over
+                        <Text style={[style.type,{maxWidth : '70%'}]}>
+                        {this.props.data.name.length > maxlimit
+                        ? this.props.data.name.substring(0, maxlimit - 3) + '...'
+                        : this.props.data.name}
                         </Text>
                         <Text style={style.model}>
-                            Manggo
+                        {this.props.data.brand.length > maxlimit
+                        ? this.props.data.brand.substring(0, maxlimit - 3) + '...'
+                        : this.props.data.brand}
                         </Text>
-                        <StartComponet/>
+                        <StartComponet star={this.props.data.rating}/>
                         <Text style={style.price}>
-                            5$
+                            {this.props.data.price}$
                         </Text>
                     </View>
                 </View>
