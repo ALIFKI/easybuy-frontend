@@ -20,6 +20,7 @@ import ChangeShipingAddress from '../screens/ChangeAddressScreen';
 import AddShipingAdress from '../screens/AddingShipingAddressScreen';
 import SuccessScreen from '../screens/SuccessScreen';
 import { SearchScreen } from '../screens/SearchScreen';
+import SettingScreen from '../screens/SettingScreen';
 
 const Stack = createStackNavigator();
 
@@ -50,7 +51,7 @@ export class Route extends Component {
                 options={{ headerShown: false }}
               />
             )}
-          {/* {this.props.user.isLogin ? ( */}
+          {this.props.user.isLogin ? (
           <>
             <Stack.Screen
               name="Dashboard"
@@ -97,6 +98,41 @@ export class Route extends Component {
                 headerLeft: () => (
                   <IonIcon
                     name={'chevron-back-outline'}
+                    size={25}
+                    onPress={() => {
+                      navigation.goBack();
+                    }}
+                  />
+                ),
+                headerStyle: {
+                  elevation: 0,
+                  shadowOpacity: 0,
+                },
+                headerTitleStyle: {
+                  marginLeft: -50,
+                  fontFamily: 'Metropolis-Medium',
+                  alignSelf: 'center',
+                },
+              })}
+            />
+            <Stack.Screen
+              name="Setting"
+              component={SettingScreen}
+              options={({ route, navigation }) => ({
+                title: '',
+                headerShown : false,
+                headerLeft: () => (
+                  <IonIcon
+                    name={'chevron-back-outline'}
+                    size={25}
+                    onPress={() => {
+                      navigation.goBack();
+                    }}
+                  />
+                ),
+                headerRight: () => (
+                  <IonIcon
+                    name={'search-outline'}
                     size={25}
                     onPress={() => {
                       navigation.goBack();
@@ -249,8 +285,8 @@ export class Route extends Component {
               options={{ headerShown: false }}
             />
           </>
-          {/* ) : ( */}
-          {/* <>
+          ) : (
+          <>
               <Stack.Screen
                 name="Login"
                 component={LoginScreen}
@@ -277,7 +313,7 @@ export class Route extends Component {
                 options={{headerShown: false}}
               />
             </>
-          )}*/}
+          )}
         </Stack.Navigator>
       </NavigationContainer>
     );

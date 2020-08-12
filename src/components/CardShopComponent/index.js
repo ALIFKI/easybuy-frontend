@@ -4,6 +4,9 @@ import image from '../../assets/image/banner.png'
 import StartComponet from '../../components/StarComponent'
 import style from './style'
 import {API_URL} from '@env'
+import { TouchableOpacity } from 'react-native-gesture-handler'
+import * as RootNavigation from '../../routes/RootNav';
+
 class CardShop extends Component {
     constructor(props) {
         super(props)
@@ -11,7 +14,8 @@ class CardShop extends Component {
     render() {
         let maxlimit = 17
         return (
-                <View style={style.cardProduct}>
+                <TouchableOpacity
+                onPress={()=>{ RootNavigation.navigate('Product', this.props.data);}} style={style.cardProduct}>
                     <Image source={{uri: API_URL + 'img/' + this.props.data.image}} style={style.image}/>
                     <View style={style.detail}>
                         <Text style={[style.type,{maxWidth : '70%'}]}>
@@ -29,7 +33,7 @@ class CardShop extends Component {
                             {this.props.data.price}$
                         </Text>
                     </View>
-                </View>
+                </TouchableOpacity>
         )
     }
 }
