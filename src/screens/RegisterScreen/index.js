@@ -34,7 +34,7 @@ export class RegisterScreen extends Component {
     };
   }
 
-  handleRegister() {
+  handleRegister = ()=> {
     let reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     if (this.state.name === '') {
       Animated.timing(this.state.nameValidate, {
@@ -98,6 +98,7 @@ export class RegisterScreen extends Component {
         toValue: 1,
       }).start();
     } else {
+      this._handleRegister()
     }
   }
 
@@ -112,6 +113,16 @@ export class RegisterScreen extends Component {
       this.props.navigation.navigate('Otp',{email : this.state.email})
     }).catch((err)=>{
       console.log(err.response)
+      Alert.alert(
+        'Ooppss !!',
+        'Check Your Input',
+        [
+          {text : 'OK', onPress : ()=>{console.log('res')}}
+        ],
+        {
+          cancelable : false
+        }
+      )
     })
   }
   render() {
@@ -209,6 +220,7 @@ export class RegisterScreen extends Component {
                   marginLeft: 14,
                 }}
                 placeholder="Password"
+                secureTextEntry
                 onChangeText={(text) => this.setState({password: text})}
                 value={this.password}
               />
@@ -238,7 +250,7 @@ export class RegisterScreen extends Component {
             <Icon name="long-arrow-right" color="#0044cc" size={30} />
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={this._handleRegister}
+            onPress={this.handleRegister}
             style={{
               backgroundColor: '#003cb3',
               height: 45,

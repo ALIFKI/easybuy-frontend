@@ -66,3 +66,18 @@ export const ForgotPassword = (data)=>{
         })
     }
 }
+
+export const Reset = (data)=>{
+    return {
+        type : 'RESET_PASSWORD',
+        payload : 
+        axios({
+            method : 'POST',
+            url : `${API_URL}auth/resetpassword`,
+            data : {
+                email : data.email,
+                password : data.password
+            }
+        })
+    }
+}

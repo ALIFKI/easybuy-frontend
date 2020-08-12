@@ -100,6 +100,10 @@ const auth = (state = initialState,action) =>{
         return {
             ...state,
         }
+        case 'RESET_PASSWORD' : 
+        return {
+            ...state
+        }
         default:
             return state
     }
