@@ -12,6 +12,12 @@ export default class SizeRound extends Component {
     }
     _onPress = ()=>{
         if(this.state.bgColor == null){
+            if(this.props.size){
+                this.props.onChange(this.props.size)
+
+            }else{
+                this.props.onChange(this.props.cat)
+            }
             this.setState({
                 bgColor : '#273AC7',
                 border : 0,
@@ -19,6 +25,11 @@ export default class SizeRound extends Component {
             })
         }
         else{
+            if(this.props.size){
+                this.props.onChange('')
+            }else{
+                this.props.onChange('')
+            }
             this.setState({
                 bgColor : null,
                 border : null,
@@ -32,7 +43,7 @@ export default class SizeRound extends Component {
             onPress={this._onPress}
             style={[style.content,{backgroundColor : this.state.bgColor || 'white', borderWidth : this.state.border || 0.5,},this.props.style]}
             >
-                <Text style={{fontFamily : 'Metropolis-Medium',color : this.state.textColor || 'black'}}> {this.props.size} </Text>
+                <Text style={{fontFamily : 'Metropolis-Medium',color : this.state.textColor || 'black'}}> {this.props.size ? this.props.size : this.props.cat} </Text>
             </TouchableHighlight>
         )
     }

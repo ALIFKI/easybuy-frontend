@@ -29,6 +29,10 @@ export class SearchScreen extends Component {
                             icon="search"
                             family="fontawesome"
                             left
+                            onChangeText={(text)=>this.setState({
+                                search : text
+                            })}
+                            onEndEditing={(e)=>{this.props.navigation.navigate('All',{data : this.state})}}
                             iconSize={24}
                             iconColor="#D4D7DE"/>
                         </TouchableOpacity>

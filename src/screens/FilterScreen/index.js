@@ -4,6 +4,51 @@ import style from './style'
 import SizeRound from '../../components/SizeRound'
 import Button from '../../components/ButtonComponent'
 export default class FilterScreen extends Component {
+    constructor(props){
+        super(props)
+        this.state = {
+            color : '',
+            size : '',
+            category : '',
+        }
+    }
+    _handleSize = ()=>(data)=>{
+        console.log(this.state.size)
+        if(this.state.size == ''){
+            this.setState({
+                size : data
+            })
+        }else{
+            this.setState({
+                size : this.state.size + '|'+ data
+            })
+        }
+    }
+    _handleCategory = ()=>(data)=>{
+        console.log(this.state.category)
+        if(this.state.size == ''){
+            this.setState({
+                category : data
+            })
+        }else{
+            if(data == ''){
+                this.setState({
+                    category : ''
+                })
+            }
+            else{
+                this.setState({
+                    category : this.state.size + '|'+ data
+                })
+            }
+
+        }
+    }
+    _handleColor = (data)=>{
+       this.setState({
+           color : data
+       })
+    }
     render() {
         return (
             <>
@@ -13,21 +58,22 @@ export default class FilterScreen extends Component {
                     <Text style={style.TextColor}> Colors </Text>
                     <View style={style.colorControl}>
                         <TouchableOpacity
-                        style={[style.colorPick,{backgroundColor: '#4290D8'}]}
+                        onPress={()=>{this._handleColor('blue')}}
+                        style={[style.colorPick,{backgroundColor: 'blue'}]}
                         >
                             <View style={style.selected}>
                             </View>
                         </TouchableOpacity>
                         <TouchableOpacity
-                        style={[style.colorPick,{backgroundColor: '#1A1A1A'}]}
+                        style={[style.colorPick,{backgroundColor: 'red'}]}
                         >
                         </TouchableOpacity>
                         <TouchableOpacity
-                        style={[style.colorPick,{backgroundColor: '#B82222'}]}
+                        style={[style.colorPick,{backgroundColor: 'yellow'}]}
                         >
                         </TouchableOpacity>
                         <TouchableOpacity
-                        style={[style.colorPick,{backgroundColor: '#151867'}]}
+                        style={[style.colorPick,{backgroundColor: 'black'}]}
                         >
                         </TouchableOpacity>
                     </View>
@@ -35,17 +81,17 @@ export default class FilterScreen extends Component {
                 <View style={style.color}>
                     <Text style={style.TextColor}> Size </Text>
                     <View style={style.SizeControl}>
-                        <SizeRound size={'XS'}/>
-                        <SizeRound size={'XL'}/>
-                        <SizeRound size={'L'}/>
+                        <SizeRound size={'XS'} onChange={this._handleSize()}/>
+                        <SizeRound size={'XL'} onChange={this._handleSize()}/>
+                        <SizeRound size={'L'} onChange={this._handleSize()}/>
                     </View>
                 </View>
                 <View style={style.color}>
                     <Text style={style.TextColor}> Category </Text>
                     <View style={style.SizeControl}>
-                        <SizeRound size={'All'} style={{padding : 10}}/>
-                        <SizeRound size={'Women'} style={{padding : 10}}/>
-                        <SizeRound size={'Man'} style={{padding : 10}}/>
+                        <SizeRound cat={'All'} style={{padding : 10}} onChange={this._handleCategory()}/>
+                        <SizeRound cat={'Women'} style={{padding : 10}} onChange={this._handleCategory()}/>
+                        <SizeRound cat={'Man'} style={{padding : 10}} onChange={this._handleCategory()}/>
                     </View>
                 </View>
                 </View>
@@ -55,7 +101,7 @@ export default class FilterScreen extends Component {
                 <Button text={'Discard'} onPress={()=>{console.log('press')}} outline={true}/>
                 </View>
                 <View style={style.half}>
-                <Button text={'Apply'} onPress={()=>{this.props.navigation.goBack()}}/>
+                <Button text={'Apply'} onPress={()=>{this.props.navigation.navigate('All',{data : this.state})}}/>
                 </View>
             </View>
             </>
