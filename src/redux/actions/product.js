@@ -17,7 +17,7 @@ export const getProduct = (
       url: API_URL + 'product/',
       params: {
         page: page || 1,
-        limit: 10,
+        limit: 5,
         search: search,
         category: category || '',
         sort: sort,

@@ -24,7 +24,7 @@ class ProductWrapper extends Component {
               return (
                 <TouchableOpacity
                   onPress={() => {
-                    RootNavigation.navigate('Product', {name: rowData.name});
+                    RootNavigation.navigate('Product', rowData);
                   }}
                   style={[
                     {

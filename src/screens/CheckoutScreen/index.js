@@ -27,12 +27,12 @@ class CheckoutScreen extends Component {
   render() {
     return (
       <ScrollView style={style.container}>
-        <Text style={style.textHeader}>Shiping Address</Text>
+        <Text style={style.textHeader}>Shipping Address</Text>
 
         <View style={style.card}>
           <View style={{marginLeft: 20, marginTop: 12}}>
             <View style={{flexDirection: 'row'}}>
-              <Text style={{fontSize: 18, fontWeight: 'bold'}}>Jane Joe</Text>
+              <Text style={{fontSize: 18, fontWeight: 'bold', fontFamily: 'Poppins-Black'}}>Jane Joe</Text>
               <TouchableOpacity
                 onPress={() =>
                   this.props.navigation.navigate('ShipingAddress')
