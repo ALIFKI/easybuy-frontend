@@ -96,6 +96,10 @@ const auth = (state = initialState,action) =>{
                 ...action.payload.data.data
             }
         }
+        case 'SEND_OTP': 
+        return {
+            ...state,
+        }
         default:
             return state
     }

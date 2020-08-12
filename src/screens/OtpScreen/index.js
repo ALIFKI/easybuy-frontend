@@ -103,33 +103,63 @@ export class OtpScreen extends Component {
           useNativeDriver : false
         }).start();
       } else {
-        Axios({
-          method : 'POST',
-          url : `${API_URL}auth/activation`,
-          data : {
-            email : this.props.route.params.email,
-            code : this.state.otp
-          }
-        }).then((res)=>{
-          Alert.alert(
-            'Done !!',
-            'Actiovation Success!! Lets Login',
-            [
-              { text: 'OK', onPress: () => this.props.navigation.navigate('Login') }
-            ],
-            { cancelable: false }
-          );
-        }).catch((err)=>{
-          console.log(err.response.data)
-          Alert.alert(
-            'Oopss!!',
-            err.response.data.data,
-            [
-              { text: 'OK', onPress: () => console.log('OK Pressed') }
-            ],
-            { cancelable: false }
-          );
-        })
+        if(this.props.route.params.type){
+          Axios({
+            method : 'POST',
+            url : `${API_URL}auth/activation`,
+            data : {
+              email : this.props.route.params.email,
+              code : this.state.otp
+            }
+          }).then((res)=>{
+            Alert.alert(
+              'Done !!',
+              'OTP is correct',
+              [
+                { text: 'OK', onPress: () => this.props.navigation.navigate('ResetPassword') }
+              ],
+              { cancelable: false }
+            );
+          }).catch((err)=>{
+            console.log(err.response.data)
+            Alert.alert(
+              'Oopss!!',
+              err.response.data.data,
+              [
+                { text: 'OK', onPress: () => console.log('OK Pressed') }
+              ],
+              { cancelable: false }
+            );
+          })
+        }else{
+          Axios({
+            method : 'POST',
+            url : `${API_URL}auth/activation`,
+            data : {
+              email : this.props.route.params.email,
+              code : this.state.otp
+            }
+          }).then((res)=>{
+            Alert.alert(
+              'Done !!',
+              'Actiovation Success!! Lets Login',
+              [
+                { text: 'OK', onPress: () => this.props.navigation.navigate('Login') }
+              ],
+              { cancelable: false }
+            );
+          }).catch((err)=>{
+            console.log(err.response.data)
+            Alert.alert(
+              'Oopss!!',
+              err.response.data.data,
+              [
+                { text: 'OK', onPress: () => console.log('OK Pressed') }
+              ],
+              { cancelable: false }
+            );
+          })
+        }
       }
     }
     render() {

@@ -52,3 +52,17 @@ export const updateUser = (data,token) =>{
         })
     }
 }
+
+export const ForgotPassword = (data)=>{
+    return {
+        type : 'SEND_OTP',
+        payload : 
+        axios({
+            method : 'POST',
+            url : `${API_URL}auth/forgotpassword`,
+            data : {
+                email : data.email
+            }
+        })
+    }
+}
