@@ -13,9 +13,10 @@ class ProductWrapper extends Component {
         return (
             <>
                 <View style={style.productCardWrapper}>
-                    <FlatList 
+                    <FlatList
                         style={{marginBottom : 0}}
                         horizontal
+                        showsHorizontalScrollIndicator={false}
                         data={this.props.data}
                         renderItem={({ item: rowData }) => {
                         return (
@@ -31,7 +32,7 @@ class ProductWrapper extends Component {
                                             New
                                         </Text>
                                     </View>
-                                    <Image source={{uri : rowData.imageUrl}} style={{height : 184,width : 148,borderRadius : 5}}/>
+                                    <Image source={{uri : rowData.imageUrl}} style={{height : 190,width : 148,borderRadius : 5}}/>
                                     <View style={style.DetailProduct}>
                                         <View style={style.start}>
                                             <StartComponet/>

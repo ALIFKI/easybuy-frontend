@@ -15,18 +15,18 @@ const style = StyleSheet.create({
         alignItems : 'flex-start'
     },
     new : {
-        fontSize: 34,
+        fontSize: 24,
         fontFamily : 'Metropolis-Bold',
         color : '#222222'
     },
     subtitle : {
         fontFamily : 'Metropolis-Regular',
-        fontSize : 11,
+        fontSize : 16,
         color : '#ACACAC'
     },
     viewAll : {
         fontFamily : 'Metropolis-Regular',
-        fontSize : 12
+        fontSize : 14
     }
 })
 

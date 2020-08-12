@@ -34,23 +34,23 @@ class HomeScreen extends Component {
     }
     render() {
         return (
-            <ScrollView>
+            <ScrollView style={{backgroundColor: 'white'}}>
                 {/* <StatusBar backgroundColor={'transparent'}/> */}
                 <View style={style.bannerContent}>
                     <Image source={image}/>
                     <Text style={[style.title]} onPress={()=>{console.log(this.props.user.auth.token)}}>Street Clothes</Text>
                 </View>
                 <View style={style.content}>
-                    <HeaderTitleComponents 
-                        title={'New'} 
-                        subtitle={"you've never seen it before"} 
-                        actionTitle={'View all'} 
+                    <HeaderTitleComponents
+                        title={'New'}
+                        subtitle={"you've never seen it before"}
+                        actionTitle={'View all'}
                         actionPress={()=>{console.log('e')}}/>
                     <ProductWrapper data={this.state.data}/>
-                    <HeaderTitleComponents 
-                        title={'Popular'} 
-                        subtitle={"you've never seen it before"} 
-                        actionTitle={'View all'} 
+                    <HeaderTitleComponents
+                        title={'Popular'}
+                        subtitle={"you've never seen it before"}
+                        actionTitle={'View all'}
                         actionPress={()=>{console.log('e')}}/>
                     <ProductWrapper data={this.state.data}/>
                 </View>

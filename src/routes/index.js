@@ -1,11 +1,11 @@
-import React, {Component} from 'react';
-import {Text, View} from 'react-native';
-import {NavigationContainer} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
+import React, { Component } from 'react';
+import { Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 import RegisterScreen from '../screens/RegisterScreen';
 import LoginScreen from '../screens/LoginScreen';
-import {navigationRef} from './RootNav';
-import {connect} from 'react-redux';
+import { navigationRef } from './RootNav';
+import { connect } from 'react-redux';
 import ForgotPassword from '../screens/ForgotPasswordScreen/index';
 import ResetPassword from '../screens/ResetPasswordScreen/index';
 import SplashScreen from '../screens/SplashScreen';
@@ -19,7 +19,7 @@ import ShippingAddreess from '../screens/ShippingAdressScreen';
 import ChangeShipingAddress from '../screens/ChangeAddressScreen';
 import AddShipingAdress from '../screens/AddingShipingAddressScreen';
 import SuccessScreen from '../screens/SuccessScreen';
-import {SearchScreen} from '../screens/SearchScreen';
+import { SearchScreen } from '../screens/SearchScreen';
 
 const Stack = createStackNavigator();
 
@@ -44,23 +44,23 @@ export class Route extends Component {
           {this.state.isLoad ? (
             <></>
           ) : (
-            <Stack.Screen
-              name="SplashScreen"
-              component={SplashScreen}
-              options={{headerShown: false}}
-            />
-          )}
+              <Stack.Screen
+                name="SplashScreen"
+                component={SplashScreen}
+                options={{ headerShown: false }}
+              />
+            )}
           {/* {this.props.user.isLogin ? ( */}
           <>
             <Stack.Screen
               name="Dashboard"
               component={TabsBar}
-              options={{headerShown: false}}
+              options={{ headerShown: false }}
             />
             <Stack.Screen
               name="Product"
               component={ProductScreen}
-              options={({route, navigation}) => ({
+              options={({ route, navigation }) => ({
                 title: route.params.name,
                 headerLeft: () => (
                   <IonIcon
@@ -92,7 +92,7 @@ export class Route extends Component {
             <Stack.Screen
               name="Filter"
               component={FilterScreen}
-              options={({route, navigation}) => ({
+              options={({ route, navigation }) => ({
                 title: 'Filter',
                 headerLeft: () => (
                   <IonIcon
@@ -117,7 +117,7 @@ export class Route extends Component {
             <Stack.Screen
               name="Shop"
               component={ProductScreen}
-              options={({route, navigation}) => ({
+              options={({ route, navigation }) => ({
                 headerLeft: () => (
                   <IonIcon
                     name={'chevron-back-outline'}
@@ -141,7 +141,7 @@ export class Route extends Component {
             <Stack.Screen
               name="CheckOut"
               component={CheckoutScreen}
-              options={({route, navigation}) => ({
+              options={({ route, navigation }) => ({
                 headerLeft: () => (
                   <IonIcon
                     name={'chevron-back-outline'}
@@ -166,7 +166,7 @@ export class Route extends Component {
             <Stack.Screen
               name="ShipingAddress"
               component={ShippingAddreess}
-              options={({route, navigation}) => ({
+              options={({ route, navigation }) => ({
                 headerLeft: () => (
                   <IonIcon
                     name={'chevron-back-outline'}
@@ -191,7 +191,7 @@ export class Route extends Component {
             <Stack.Screen
               name="Change Address"
               component={ChangeShipingAddress}
-              options={({route, navigation}) => ({
+              options={({ route, navigation }) => ({
                 headerLeft: () => (
                   <IonIcon
                     name={'chevron-back-outline'}
@@ -216,7 +216,7 @@ export class Route extends Component {
             <Stack.Screen
               name="Add Shipping Address"
               component={AddShipingAdress}
-              options={({route, navigation}) => ({
+              options={({ route, navigation }) => ({
                 headerLeft: () => (
                   <IonIcon
                     name={'chevron-back-outline'}
@@ -239,14 +239,14 @@ export class Route extends Component {
             />
 
             <Stack.Screen
-              options={{headerShown: false}}
+              options={{ headerShown: false }}
               name="Success Screen"
               component={SuccessScreen}
             />
             <Stack.Screen
               name="Search"
               component={SearchScreen}
-              options={{headerShown: false}}
+              options={{ headerShown: false }}
             />
           </>
           {/* ) : ( */}

@@ -16,14 +16,49 @@ import RadioForm, {
   RadioButtonLabel,
 } from 'react-native-simple-radio-button';
 
+import axios from 'axios';
+
 class ChangeAddreessScreen extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      address_as: '',
+      fullname: '',
+      address: '',
+      city: '',
+      zip_code: '',
+      telp: '',
+    }
   }
 
   radio_props1 = [{value: 0}];
 
   radio_props2 = [{value: 1}];
+
+  upload = (e) => {
+    e.preventDefault();
+    const formData = new FormData();
+    formData.append('address_as', this.state.address_as);
+    formData.append('fullname', this.state.fullname);
+    fomtData.append('address', this.state.address);
+    formData.append('city', this.state.city);
+    formData.append('zip_code', this.state.zip_code);
+    formData.append('telp', this.state.telp);
+    axios({
+      method: 'PUT',
+      url: 'http://localhost:3000/address',
+      data: formData,
+      header: {
+        'Content-Type': 'multipart/form-data'
+      }
+    })
+    .then(() => {
+      console.log('Update success')
+    })
+    .catch((err) => {
+      console.log(err);
+    })
+  }
 
   render() {
     return (
@@ -36,7 +71,7 @@ class ChangeAddreessScreen extends Component {
               width: '100%',
             }}>
             <View style={{marginRight: 10, marginLeft: 10}}>
-              <Text>Addreess</Text>
+              <Text>Save address as</Text>
 
               <TextInput
                 style={{
@@ -75,7 +110,7 @@ class ChangeAddreessScreen extends Component {
               width: '100%',
             }}>
             <View style={{marginRight: 10, marginLeft: 10, marginBottom: 30}}>
-              <Text>City Or Subbdistrict</Text>
+              <Text>Address</Text>
 
               <TextInput
                 style={{
