@@ -19,14 +19,14 @@ class ShopScreen extends Component {
   render() {
     return (
       <View>
-        <ScrollView style={{height: 900}}>
+        <ScrollView style={{height: 400}}>
           <Icon
             name="search"
             size={23}
             style={{
               marginLeft: 'auto',
               marginRight: 13,
-              marginTop: 13,
+              marginTop: 11,
               fontWeight: 'normal',
               shadowColor: '#000',
               shadowOffset: {
@@ -44,7 +44,7 @@ class ShopScreen extends Component {
               style={{
                 fontWeight: 'bold',
                 fontSize: 40,
-                marginTop: 70,
+                marginTop: 30,
                 marginBottom: 13,
               }}>
               My Bag
