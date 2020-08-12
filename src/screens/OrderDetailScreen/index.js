@@ -78,26 +78,26 @@ class OrderDetailScreen extends Component {
                     <Text>Order Information</Text>
                 </View>
                 <View style={{paddingTop : 20}}>
-                    <View style={style.list}>
+                    <View style={style.listInfo}>
                         <Text style={[style.accent,{fontSize : 14}]}>Shipping Address :</Text>
                         <Text style={style.text}>
                         3 Newbridge Court ,Chino Hills, 
                             CA 91709, United States
                         </Text>
                     </View>
-                    <View style={style.list}>
+                    <View style={style.listInfo}>
                         <Text style={[style.accent,{fontSize : 14}]}>Payment Method :</Text>
                         <Text style={style.text}>
                             Payment Met
                         </Text>
                     </View>
-                    <View style={style.list}>
+                    <View style={style.listInfo}>
                         <Text style={[style.accent,{fontSize : 14}]}>Delivery Order :</Text>
                         <Text style={[style.text,{textAlign : 'left'}]}>
                             FedEx, 3 days, 15$
                         </Text>
                     </View>
-                    <View style={style.list}>
+                    <View style={style.listInfo}>
                         <Text style={[style.accent,{fontSize : 14}]}>Total Amount :</Text>
                         <Text style={style.text}>
                            $900
