@@ -19,12 +19,10 @@ import ShippingAddreess from '../screens/ShippingAdressScreen';
 import ChangeShipingAddress from '../screens/ChangeAddressScreen';
 import AddShipingAdress from '../screens/AddingShipingAddressScreen';
 import SuccessScreen from '../screens/SuccessScreen';
-import {SearchScreen} from '../screens/SearchScreen';
-<<<<<<< HEAD
+import SearchScreen from '../screens/SearchScreen';
 import SettingScreen from '../screens/SettingScreen';
-=======
 import MyOrderScreen from '../screens/MyOrderScreen';
->>>>>>> 4687153f1d5397d7d6b6f62832c73957e383795d
+import OrderDetailScreen from '../screens/OrderDetailScreen';
 
 const Stack = createStackNavigator();
 
@@ -278,7 +276,39 @@ export class Route extends Component {
                 },
               })}
             />
-
+            <Stack.Screen
+              name="OrderDetail"
+              component={OrderDetailScreen}
+              options={({route, navigation}) => ({
+                headerShown : true,
+                title: 'Order Details',
+                headerLeft: () => (
+                  <IonIcon
+                    name={'chevron-back-outline'}
+                    size={25}
+                    onPress={() => {
+                      navigation.goBack();
+                    }}
+                  />
+                ),
+                headerRight: () => (
+                  <IonIcon
+                    name={'search-outline'}
+                    size={25}
+                    onPress={() => {
+                      navigation.goBack();
+                    }}
+                  />
+                ),
+                headerStyle: {
+                },
+                headerTitleStyle: {
+                  marginLeft: -20,
+                  fontFamily: 'Metropolis-Medium',
+                  alignSelf: 'center',
+                },
+              })}
+            />
             <Stack.Screen
               name="My Orders"
               component={MyOrderScreen}
