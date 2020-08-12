@@ -18,6 +18,7 @@ import CheckoutScreen from '../screens/CheckoutScreen';
 import ShippingAddreess from '../screens/ShippingAdressScreen';
 import ChangeShipingAddress from '../screens/ChangeAddressScreen';
 import AddShipingAdress from '../screens/AddingShipingAddressScreen';
+import SuccessScreen from '../screens/SuccessScreen';
 import {SearchScreen} from '../screens/SearchScreen';
 
 const Stack = createStackNavigator();
@@ -49,7 +50,7 @@ export class Route extends Component {
               options={{headerShown: false}}
             />
           )}
-          {/* {this.props.user.isLogin ? ( */}
+          {this.props.user.isLogin ? (
           <>
             <Stack.Screen
               name="Dashboard"
@@ -236,14 +237,20 @@ export class Route extends Component {
                 },
               })}
             />
+
+            <Stack.Screen
+              options={{headerShown: false}}
+              name="Success Screen"
+              component={SuccessScreen}
+            />
             <Stack.Screen
               name="Search"
               component={SearchScreen}
               options={{headerShown: false}}
             />
           </>
-          {/* ) : ( */}
-          {/* <>
+          ) : (
+          <>
               <Stack.Screen
                 name="Login"
                 component={LoginScreen}
@@ -269,8 +276,8 @@ export class Route extends Component {
                 component={ResetPassword}
                 options={{headerShown: false}}
               />
-            </> */}
-          {/* )} */}
+            </>
+          )}
         </Stack.Navigator>
       </NavigationContainer>
     );

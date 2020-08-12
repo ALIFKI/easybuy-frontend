@@ -6,11 +6,12 @@ import {
   TextInput,
   TouchableOpacity,
   Animated,
+  Alert,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import styles from './style/';
 import {connect} from 'react-redux';
-import {register} from '../../redux/actions/auth';
+import {ForgotPassword} from '../../redux/actions/auth';
 export class ForgotPasswordScreen extends Component {
   constructor(props) {
     super(props);
@@ -36,7 +37,24 @@ export class ForgotPasswordScreen extends Component {
         toValue: 1,
       }).start();
     } else {
-      this.props.navigation.navigate('ResetPassword');
+      var data = {
+        email : this.state.email
+      }
+      this.props.ForgotPassword(data).then((res)=>{
+        console.log(res)
+        Alert.alert(
+          'Done !',
+          'OTP has been send Check Your email',
+          [
+            {text : 'OK' , onPress: ()=>{
+               this.props.navigation.navigate('Otp',{email : this.state.email, type : 1})
+            }}
+          ],
+          {cancelable: false}
+        )
+      }).catch((err)=>{
+        console.log(err)
+      })
     }
   }
   render() {
@@ -44,7 +62,7 @@ export class ForgotPasswordScreen extends Component {
       <ScrollView style={{height: 500}}>
         <View style={{marginLeft: 20, marginRight: 20}}>
           <TouchableOpacity
-            onPress={() => this.props.navigation.navigate('Register')}>
+            onPress={() => this.props.navigation.goBack()}>
             <Icon
               name="angle-left"
               coloe="black"
@@ -58,7 +76,7 @@ export class ForgotPasswordScreen extends Component {
 
           <View style={{marginTop: 50}}>
             <Text>
-              Please enter your email address. You will receiver a link to
+              Please enter your email address. You will receiver a OTP to
               create a new password via email
             </Text>
             <View style={styles.boxShadow}>
@@ -120,9 +138,9 @@ export class ForgotPasswordScreen extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  register,
+
 });
-const mapDispatchToProp = {register};
+const mapDispatchToProp = {ForgotPassword};
 
 export default connect(
   mapStateToProps,

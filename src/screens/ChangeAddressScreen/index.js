@@ -16,7 +16,7 @@ import RadioForm, {
   RadioButtonLabel,
 } from 'react-native-simple-radio-button';
 
-class CheckoutScreen extends Component {
+class ChangeAddreessScreen extends Component {
   constructor(props) {
     super(props);
   }
@@ -143,4 +143,4 @@ class CheckoutScreen extends Component {
   }
 }
 
-export default CheckoutScreen;
+export default ChangeAddreessScreen;

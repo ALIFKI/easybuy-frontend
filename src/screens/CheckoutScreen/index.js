@@ -111,7 +111,8 @@ class CheckoutScreen extends Component {
             <Text style={{marginLeft: 'auto', fontWeight: 'bold'}}>60$</Text>
           </View>
         </View>
-        <View
+        <TouchableOpacity
+          onPress={() => this.props.navigation.navigate('Success Screen')}
           style={{
             backgroundColor: '#003399',
             width: '100%',
@@ -129,7 +130,7 @@ class CheckoutScreen extends Component {
             }}>
             Submit Orders
           </Text>
-        </View>
+        </TouchableOpacity>
       </ScrollView>
     );
   }
