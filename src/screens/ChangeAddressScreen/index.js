@@ -1,0 +1,146 @@
+import React, {Component} from 'react';
+import {
+  Text,
+  View,
+  ScrollView,
+  Image,
+  CheckBox,
+  TouchableOpacity,
+  TextInput,
+} from 'react-native';
+import style from './style';
+
+import RadioForm, {
+  RadioButton,
+  RadioButtonInput,
+  RadioButtonLabel,
+} from 'react-native-simple-radio-button';
+
+class CheckoutScreen extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  radio_props1 = [{value: 0}];
+
+  radio_props2 = [{value: 1}];
+
+  render() {
+    return (
+      <ScrollView style={style.container}>
+        <View style={style.card}>
+          <View
+            style={{
+              marginTop: 10,
+
+              width: '100%',
+            }}>
+            <View style={{marginRight: 10, marginLeft: 10}}>
+              <Text>Addreess</Text>
+
+              <TextInput
+                style={{
+                  borderBottomWidth: 2,
+                  borderColor: 'black',
+                  width: '100%',
+                  height: 30,
+                }}
+              />
+            </View>
+            <View
+              style={{
+                marginTop: 23,
+                marginBottom: 20,
+                marginRight: 10,
+                marginLeft: 10,
+              }}>
+              <Text>Recepinet's Name</Text>
+
+              <TextInput
+                style={{
+                  borderBottomWidth: 2,
+                  borderColor: 'black',
+                  width: '100%',
+                  height: 30,
+                }}
+              />
+            </View>
+          </View>
+        </View>
+        <View style={style.card}>
+          <View
+            style={{
+              marginTop: 10,
+
+              width: '100%',
+            }}>
+            <View style={{marginRight: 10, marginLeft: 10, marginBottom: 30}}>
+              <Text>City Or Subbdistrict</Text>
+
+              <TextInput
+                style={{
+                  borderBottomWidth: 2,
+                  borderColor: 'black',
+                  width: '100%',
+                  height: 30,
+                }}
+              />
+            </View>
+            <View style={{marginRight: 10, marginLeft: 10}}>
+              <Text>City Or Subbdistrict</Text>
+
+              <TextInput
+                style={{
+                  borderBottomWidth: 2,
+                  borderColor: 'black',
+                  width: '100%',
+                  height: 30,
+                }}
+              />
+            </View>
+            <View
+              style={{
+                marginTop: 23,
+                marginBottom: 20,
+                marginRight: 10,
+                marginLeft: 10,
+              }}>
+              <Text>Postal Code</Text>
+
+              <TextInput
+                style={{
+                  borderBottomWidth: 2,
+                  borderColor: 'black',
+                  width: '100%',
+                  height: 30,
+                }}
+              />
+            </View>
+          </View>
+        </View>
+        <TouchableOpacity
+          onPress={() => this.props.navigation.navigate('Add Shipping Address')}
+          style={{
+            width: '100%',
+            backgroundColor: '#0033cc',
+            height: 50,
+            marginTop: 30,
+            borderRadius: 100,
+          }}>
+          <Text
+            style={{
+              textAlign: 'center',
+              color: 'white',
+
+              marginTop: 9,
+              fontSize: 20,
+            }}>
+            SAVE ADDRESS
+          </Text>
+        </TouchableOpacity>
+      </ScrollView>
+    );
+  }
+}
+
+export default CheckoutScreen;

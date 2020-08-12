@@ -16,6 +16,8 @@ import FilterScreen from '../screens/FilterScreen';
 import OtpScreen from '../screens/OtpScreen';
 import CheckoutScreen from '../screens/CheckoutScreen';
 import ShippingAddreess from '../screens/ShippingAdressScreen';
+import ChangeShipingAddress from '../screens/ChangeAddressScreen';
+import AddShipingAdress from '../screens/AddingShipingAddressScreen';
 import {SearchScreen} from '../screens/SearchScreen';
 
 const Stack = createStackNavigator();
@@ -186,8 +188,33 @@ export class Route extends Component {
             />
 
             <Stack.Screen
-              name="ChangeShippingAddress"
-              component={ShippingAddreess}
+              name="Change Address"
+              component={ChangeShipingAddress}
+              options={({route, navigation}) => ({
+                headerLeft: () => (
+                  <IonIcon
+                    name={'chevron-back-outline'}
+                    size={25}
+                    onPress={() => {
+                      navigation.goBack();
+                    }}
+                  />
+                ),
+                headerStyle: {
+                  elevation: 1,
+                  shadowOpacity: 1,
+                },
+                headerTitleStyle: {
+                  marginLeft: -50,
+                  fontFamily: 'Metropolis-Medium',
+                  alignSelf: 'center',
+                },
+              })}
+            />
+
+            <Stack.Screen
+              name="Add Shipping Address"
+              component={AddShipingAdress}
               options={({route, navigation}) => ({
                 headerLeft: () => (
                   <IonIcon

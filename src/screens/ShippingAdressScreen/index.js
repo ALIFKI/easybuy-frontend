@@ -40,7 +40,12 @@ class ShipingAdrress extends Component {
           <View style={{marginLeft: 20, marginTop: 12}}>
             <View style={{flexDirection: 'row'}}>
               <Text style={{fontSize: 18, fontWeight: 'bold'}}>Jane Joe</Text>
-              <Text style={{marginLeft: 220, color: 'blue'}}>Change</Text>
+              <TouchableOpacity
+                onPress={() =>
+                  this.props.navigation.navigate('Change Address')
+                }>
+                <Text style={{marginLeft: 220, color: 'blue'}}>Change</Text>
+              </TouchableOpacity>
             </View>
             <View style={{marginTop: 9}}>
               <Text style={{fontSize: 16}}>3 New Bridge Court</Text>
