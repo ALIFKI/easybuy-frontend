@@ -18,6 +18,7 @@ import CheckoutScreen from '../screens/CheckoutScreen';
 import ShippingAddreess from '../screens/ShippingAdressScreen';
 import ChangeShipingAddress from '../screens/ChangeAddressScreen';
 import AddShipingAdress from '../screens/AddingShipingAddressScreen';
+import SuccessScreen from '../screens/SuccessScreen';
 import {SearchScreen} from '../screens/SearchScreen';
 
 const Stack = createStackNavigator();
@@ -235,6 +236,12 @@ export class Route extends Component {
                   alignSelf: 'center',
                 },
               })}
+            />
+
+            <Stack.Screen
+              options={{headerShown: false}}
+              name="Success Screen"
+              component={SuccessScreen}
             />
             <Stack.Screen
               name="Search"
