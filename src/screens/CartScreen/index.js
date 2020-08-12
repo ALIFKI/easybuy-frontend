@@ -1,9 +1,9 @@
-import React, {Component} from 'react';
-import {Text, View, ScrollView, Image} from 'react-native';
+import React, { Component } from 'react';
+import { Text, View, ScrollView, Image } from 'react-native';
 import style from './style';
 import IonIcon from 'react-native-vector-icons/Ionicons';
 import HeaderTitleComponents from '../../components/HeaderTitleComponents';
-import {TouchableOpacity} from 'react-native-gesture-handler';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 import image from '../../assets/image/banner.png';
 import StartComponet from '../../components/StarComponent';
 import CardShop from '../../components/CardShopComponent';
@@ -20,7 +20,7 @@ class ShopScreen extends Component {
   render() {
     return (
       <View>
-        <ScrollView style={{height: 400}}>
+        <ScrollView style={{ height: 400 }}>
           <Icon
             name="search"
             size={23}
@@ -40,13 +40,13 @@ class ShopScreen extends Component {
               elevation: 2,
             }}
           />
-          <View style={{marginLeft: 10, marginRight: 10}}>
+          <View style={{ marginLeft: 10, marginRight: 10 }}>
             <Text
               style={{
-                fontWeight: 'bold',
-                fontSize: 40,
-                marginTop: 30,
+                fontSize: 35,
+                marginTop: 70,
                 marginBottom: 13,
+                fontFamily: 'Poppins-SemiBold',
               }}>
               My Bag
             </Text>
@@ -67,48 +67,41 @@ class ShopScreen extends Component {
 
                 elevation: 4,
               }}>
-              <View style={{flexDirection: 'row'}}>
-                <Image source={image} style={{width: 100}} />
-                <View style={{marginLeft: 9, flex: 1}}>
-                  <View
+              <View style={{ flexDirection: 'row' }}>
+                <Image source={image} style={{ width: 100 }} />
+                <View style={{ marginLeft: 9 }}>
+                  <Text
                     style={{
-                      display: 'flex',
-                      flexDirection: 'row',
-                      justifyContent: 'space-between',
+                      fontSize: 20,
+                      marginTop: 5,
+                      fontFamily: 'Poppins-SemiBold',
                     }}>
-                    <Text style={{fontWeight: 'bold', fontSize: 18}}>
-                      Title
+                    Title
+                  </Text>
+                  <View style={{ flexDirection: 'row', height: 140 }}>
+                    <Text
+                      style={{
+                        fontSize: 15,
+                        color: 'gray',
+                        fontFamily: 'Poppins-Medium',
+                      }}>
+                      color:
                     </Text>
-                    <Popover
-                      backgroundStyle={{
-                        opacity: 0.3,
-                      }}
-                      from={
-                        <TouchableOpacity>
-                          <IonIcon
-                            name={'ellipsis-vertical'}
-                            size={24}
-                            style={{margin: 5}}
-                          />
-                        </TouchableOpacity>
-                      }>
-                      <View
-                        style={{
-                          margin: 10,
-                          borderRadius: 5,
-                        }}>
-                        <Text>Delete Form List</Text>
-                      </View>
-                    </Popover>
-                  </View>
-                  <View style={{flexDirection: 'row', height: 140}}>
-                    <Text style={{color: 'gray'}}>color:</Text>
-                    <Text style={{fontSize: 13, marginLeft: 5}}>Grey</Text>
+                    <Text
+                      style={{
+                        fontSize: 15,
+                        marginLeft: 5,
+                        fontFamily: 'Poppins-Medium',
+                      }}>
+                      Grey
+                    </Text>
                     <View
                       style={{
                         flexDirection: 'row',
                         zIndex: 5,
-                        marginLeft: -62,
+                        marginLeft: -80,
+                        // paddingBottom: -20,
+                        // marginBottom: 100,
                       }}>
                       {this.state.count == 1 ? (
                         <TouchableOpacity
@@ -118,15 +111,16 @@ class ShopScreen extends Component {
                               width: 0,
                               height: 2,
                             },
-                            shadowOpacity: 0.25,
+                            shadowOpacity: 1,
                             shadowRadius: 3.84,
 
                             elevation: 5,
-                            marginTop: 40,
+                            marginTop: 30,
                             backgroundColor: 'white',
                             width: 40,
                             height: 40,
                             borderRadius: 50,
+                            // nBottom: 30,
                           }}>
                           <Text
                             style={{
@@ -139,41 +133,42 @@ class ShopScreen extends Component {
                           </Text>
                         </TouchableOpacity>
                       ) : (
-                        <TouchableOpacity
-                          onPress={() =>
-                            this.setState({count: this.state.count - 1})
-                          }
-                          style={{
-                            shadowColor: '#000',
-                            shadowOffset: {
-                              width: 0,
-                              height: 2,
-                            },
-                            shadowOpacity: 0.25,
-                            shadowRadius: 3.84,
-
-                            elevation: 5,
-                            marginTop: 40,
-                            backgroundColor: 'white',
-                            width: 40,
-                            height: 40,
-                            borderRadius: 50,
-                          }}>
-                          <Text
+                          <TouchableOpacity
+                            onPress={() =>
+                              this.setState({ count: this.state.count - 1 })
+                            }
                             style={{
-                              color: 'grey',
-                              textAlign: 'center',
-                              marginTop: 2,
-                              fontSize: 26,
+                              shadowColor: '#000',
+                              shadowOffset: {
+                                width: 1,
+                                height: 2,
+                              },
+                              shadowOpacity: 1,
+                              shadowRadius: 3.84,
+
+                              elevation: 5,
+                              marginTop: 30,
+                              backgroundColor: 'white',
+                              width: 40,
+                              height: 40,
+                              borderRadius: 50,
                             }}>
-                            -
+                            <Text
+                              style={{
+                                color: 'grey',
+                                textAlign: 'center',
+                                marginTop: 2,
+                                fontSize: 26,
+                                fontFamily: 'Poppins-Medium',
+                              }}>
+                              -
                           </Text>
-                        </TouchableOpacity>
-                      )}
+                          </TouchableOpacity>
+                        )}
 
                       <TouchableOpacity
                         style={{
-                          marginTop: 40,
+                          marginTop: 30,
                           backgroundColor: 'white',
                           width: 40,
                           height: 40,
@@ -183,6 +178,7 @@ class ShopScreen extends Component {
                           style={{
                             textAlign: 'center',
                             marginTop: 10,
+                            fontFamily: 'Poppins-Medium',
                           }}>
                           {this.state.count}
                         </Text>
@@ -190,7 +186,7 @@ class ShopScreen extends Component {
 
                       <TouchableOpacity
                         onPress={() =>
-                          this.setState({count: this.state.count + 1})
+                          this.setState({ count: this.state.count + 1 })
                         }
                         style={{
                           shadowColor: '#000',
@@ -198,12 +194,12 @@ class ShopScreen extends Component {
                             width: 0,
                             height: 2,
                           },
-                          shadowOpacity: 0.25,
+                          shadowOpacity: 0.5,
                           shadowRadius: 3.84,
 
                           elevation: 5,
                           marginLeft: 2,
-                          marginTop: 40,
+                          marginTop: 30,
                           backgroundColor: 'white',
                           width: 40,
                           height: 40,
@@ -215,6 +211,7 @@ class ShopScreen extends Component {
                             textAlign: 'center',
                             marginTop: 2,
                             fontSize: 26,
+                            fontFamily: 'Poppins-Medium',
                           }}>
                           +
                         </Text>
@@ -226,9 +223,10 @@ class ShopScreen extends Component {
                 <Text
                   style={{
                     marginLeft: 'auto',
-                    fontWeight: 'bold',
-                    marginTop: 73,
+                    marginTop: 80,
                     marginRight: 12,
+                    fontFamily: 'Poppins-Medium',
+                    fontSize: 16,
                   }}>
                   30$
                 </Text>
@@ -241,16 +239,24 @@ class ShopScreen extends Component {
           style={{
             width: '100%',
             position: 'absolute',
-            marginTop: '121%',
+            marginTop: '120%',
             flexDirection: 'row',
           }}>
-          <Text style={{fontSize: 17, color: 'gray'}}>Total Amount:</Text>
+          <Text
+            style={{
+              fontSize: 17,
+              color: 'gray',
+              fontFamily: 'Poppins-Medium',
+              marginLeft: 20,
+            }}>
+            Total Amount:
+          </Text>
           <Text
             style={{
               marginLeft: 'auto',
-              marginRight: 8,
-              fontWeight: 'bold',
-              fontSize: 18,
+              marginRight: 20,
+              fontSize: 22,
+              fontFamily: 'Poppins-SemiBold',
             }}>
             {' '}
             19$
@@ -259,27 +265,29 @@ class ShopScreen extends Component {
 
         <View
           style={{
-            borderRadius: 19,
-            marginTop: 540,
+            borderRadius: 50,
+            marginTop: 520,
             backgroundColor: '#0000b3',
-            height: 50,
-            width: '100%',
+            height: 45,
+            width: '90%',
+            marginLeft: 20,
             position: 'absolute',
           }}>
           <TouchableOpacity
             onPress={() => this.props.navigation.navigate('CheckOut')}
             style={{
-              borderRadius: 19,
+              borderRadius: 30,
               width: '100%',
               backgroundColor: '#0000b3',
-              height: 50,
+              // height: 50,
             }}>
             <Text
               style={{
                 textAlign: 'center',
                 color: 'white',
-                fontSize: 20,
-                marginTop: 11,
+                fontSize: 16,
+                marginTop: 13,
+                fontFamily: 'Poppins-Medium',
               }}>
               CHECK OUT
             </Text>

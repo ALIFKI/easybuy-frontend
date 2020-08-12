@@ -9,9 +9,9 @@ const style = StyleSheet.create({
     height: 100,
   },
   textHeader: {
-    fontWeight: 'bold',
     fontSize: 22,
     marginTop: 19,
+    fontFamily: 'Poppins-SemiBold',
   },
   card: {
     width: '100%',
