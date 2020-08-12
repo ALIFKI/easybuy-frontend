@@ -16,7 +16,7 @@ class HeaderTitleComponents extends Component {
                     </Text>
                     <Text style={style.subtitle}>
                         {this.props.subtitle}
-                    </Text>      
+                    </Text>
                 </View>
                 <TouchableOpacity
                 onPress={
@@ -26,7 +26,7 @@ class HeaderTitleComponents extends Component {
                 <Text style={style.viewAll}>
                     {this.props.actionTitle}
                 </Text>
-                </TouchableOpacity> 
+                </TouchableOpacity>
             </View>
         )
     }

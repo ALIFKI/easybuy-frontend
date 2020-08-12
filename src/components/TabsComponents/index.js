@@ -18,7 +18,7 @@ export default function TabsBar() {
       tabBarOptions={{
         showLabel: false,
         activeTintColor: '#273AC7', // active icon color
-        inactiveTintColor: '#E0E0E0', // inactive icon color
+        inactiveTintColor: 'gray', // inactive icon color
         style: {
           backgroundColor: '#FFF',
           borderTopLeftRadius: 30,

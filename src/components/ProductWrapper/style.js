@@ -9,7 +9,7 @@ const style = StyleSheet.create({
     },
     styles : {
         fontFamily : 'Metropolis-Regular',
-        fontSize : 11,
+        fontSize : 14,
         color : '#ACACAC'
     },
     model : {
