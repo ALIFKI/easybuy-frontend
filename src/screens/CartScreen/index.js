@@ -8,7 +8,7 @@ import image from '../../assets/image/banner.png';
 import StartComponet from '../../components/StarComponent';
 import CardShop from '../../components/CardShopComponent';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import Popover from 'react-native-popover-view'
+import Popover from 'react-native-popover-view';
 
 class ShopScreen extends Component {
   constructor(props) {
@@ -69,23 +69,37 @@ class ShopScreen extends Component {
               }}>
               <View style={{flexDirection: 'row'}}>
                 <Image source={image} style={{width: 100}} />
-                <View style={{marginLeft: 9,flex :1}}>
-                  <View style={{display: "flex",flexDirection : 'row',justifyContent :'space-between'}}>
-                  <Text style={{fontWeight: 'bold', fontSize: 18}}>Title</Text>
-                  <Popover
-                  backgroundStyle={{
-                    opacity  : 0.3}
-                  }
-                    from={(
-                      <TouchableOpacity>
-                       <IonIcon name={'ellipsis-vertical'} size={24} style={{margin :5}}/>
-                      </TouchableOpacity>
-                    )}>
-                    <View style={{
-                      margin : 10,borderRadius : 5,}}>
-                    <Text>Delete Form List</Text>
+                <View style={{marginLeft: 9, flex: 1}}>
+                  <View
+                    style={{
+                      display: 'flex',
+                      flexDirection: 'row',
+                      justifyContent: 'space-between',
+                    }}>
+                    <Text style={{fontWeight: 'bold', fontSize: 18}}>
+                      Title
+                    </Text>
+                    <Popover
+                      backgroundStyle={{
+                        opacity: 0.3,
+                      }}
+                      from={
+                        <TouchableOpacity>
+                          <IonIcon
+                            name={'ellipsis-vertical'}
+                            size={24}
+                            style={{margin: 5}}
+                          />
+                        </TouchableOpacity>
+                      }>
+                      <View
+                        style={{
+                          margin: 10,
+                          borderRadius: 5,
+                        }}>
+                        <Text>Delete Form List</Text>
                       </View>
-                  </Popover>
+                    </Popover>
                   </View>
                   <View style={{flexDirection: 'row', height: 140}}>
                     <Text style={{color: 'gray'}}>color:</Text>
