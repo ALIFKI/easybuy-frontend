@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import {Text, View, ScrollView, Image, TouchableOpacity} from 'react-native';
 import style from './style';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import {API_URL} from '@env'
+
 class ProfileScreen extends Component {
   constructor(props) {
     super(props);
@@ -12,7 +14,7 @@ class ProfileScreen extends Component {
       <View style={{backgroundColor: 'white', width: '100%', height: '100%'}}>
         <ScrollView style={style.container}>
           <Text style={style.textHeader}>My Profile</Text>
-          <TouchableOpacity style={{flexDirection: 'row'}}>
+          <View style={{flexDirection: 'row'}}>
             <Image
               style={{borderRadius: 100, width: 70, height: 70}}
               source={require('../../image/avatar.png')}
@@ -24,9 +26,11 @@ class ProfileScreen extends Component {
               <Text style={{color: 'gray'}}>MelindaBrow@gmail.com</Text>
               <Text></Text>
             </View>
-          </TouchableOpacity>
+          </View>
 
-          <TouchableOpacity style={{marginTop: 40, flexDirection: 'row'}}>
+          <TouchableOpacity
+            onPress={() => this.props.navigation.navigate('My Orders')}
+            style={{marginTop: 40, flexDirection: 'row'}}>
             <View>
               <Text style={{fontWeight: 'bold', fontSize: 20}}>My Orders</Text>
               <Text style={{color: 'gray', marginTop: 7}}>
@@ -54,7 +58,9 @@ class ProfileScreen extends Component {
             />
           </TouchableOpacity>
 
-          <TouchableOpacity style={{marginTop: 40, flexDirection: 'row'}}>
+          <TouchableOpacity 
+          onPress={()=>{this.props.navigation.navigate('Setting')}}
+          style={{marginTop: 40, flexDirection: 'row'}}>
             <View>
               <Text style={{fontWeight: 'bold', fontSize: 20}}>Seetings</Text>
               <Text style={{color: 'gray', marginTop: 7}}>

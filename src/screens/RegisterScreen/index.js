@@ -8,6 +8,7 @@ import {
   Animated,
   Alert
 } from 'react-native';
+import {API_URL} from '@env'
 import Icon from 'react-native-vector-icons/FontAwesome';
 import styles from './style/';
 import {connect} from 'react-redux';
