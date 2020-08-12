@@ -6,11 +6,12 @@ import {
   TextInput,
   TouchableOpacity,
   Animated,
+  Alert
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import styles from './style/';
 import {connect} from 'react-redux';
-import {register} from '../../redux/actions/auth';
+import { register } from '../../redux/actions/auth';
 export class RegisterScreen extends Component {
   constructor(props) {
     super(props);
@@ -98,6 +99,20 @@ export class RegisterScreen extends Component {
       }).start();
     } else {
     }
+  }
+
+  _handleRegister = ()=>{
+    var data = {
+      name : this.state.name,
+      email : this.state.email,
+      password : this.state.password,
+    }
+    this.props.register(data).then((res)=>{
+      console.log('yes')
+      this.props.navigation.navigate('Otp',{email : this.state.email})
+    }).catch((err)=>{
+      console.log(err.response)
+    })
   }
   render() {
     return (
@@ -223,7 +238,7 @@ export class RegisterScreen extends Component {
             <Icon name="long-arrow-right" color="#0044cc" size={30} />
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => this.handleRegister()}
+            onPress={this._handleRegister}
             style={{
               backgroundColor: '#003cb3',
               height: 45,
@@ -242,7 +257,7 @@ export class RegisterScreen extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  register,
+
 });
 const mapDispatchToProp = {register};
 

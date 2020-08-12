@@ -6,11 +6,12 @@ import {
   TextInput,
   TouchableOpacity,
   Animated,
+  Alert,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import styles from './style/';
 import {connect} from 'react-redux';
-import {register} from '../../redux/actions/auth';
+import {login} from '../../redux/actions/auth';
 export class LoginScreen extends Component {
   constructor(props) {
     super(props);
@@ -101,6 +102,23 @@ export class LoginScreen extends Component {
         useNativeDriver : false
       }).start();
     } else {
+      var data = {
+        email : this.state.email,
+        password  : this.state.password
+      }
+      this.props.login(data).then((res)=>{
+        console.log(res)
+      }).catch((err)=>{
+        console.log(err.response.data)
+        Alert.alert(
+          'Oops',
+          'Msg',
+          [
+           {text : 'OK' ,onPress : ()=>{ console.log('press')}}
+          ],
+          {cancelable : true}
+        )
+      })
     }
   }
   render() {
@@ -219,6 +237,6 @@ export class LoginScreen extends Component {
   }
 }
 
-const mapDispatchToProp = {register};
+const mapDispatchToProp = {login};
 
 export default connect(null,mapDispatchToProp)(LoginScreen);

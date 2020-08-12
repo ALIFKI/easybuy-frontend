@@ -5,6 +5,7 @@ import image from '../../assets/image/banner.png'
 import {Card} from 'galio-framework'
 import ProductWrapper from '../../components/ProductWrapper'
 import HeaderTitleComponents from '../../components/HeaderTitleComponents'
+import { connect } from 'react-redux'
 
 
 class HomeScreen extends Component {
@@ -37,7 +38,7 @@ class HomeScreen extends Component {
                 {/* <StatusBar backgroundColor={'transparent'}/> */}
                 <View style={style.bannerContent}>
                     <Image source={image}/>
-                    <Text style={[style.title]}>Street Clothes</Text>
+                    <Text style={[style.title]} onPress={()=>{console.log(this.props.user.auth.token)}}>Street Clothes</Text>
                 </View>
                 <View style={style.content}>
                     <HeaderTitleComponents 
@@ -58,4 +59,8 @@ class HomeScreen extends Component {
     }
 }
 
-export default HomeScreen
+const mapStateToProps = state =>({
+    user : state.auth
+})
+
+export default connect(mapStateToProps)(HomeScreen)

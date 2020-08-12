@@ -6,18 +6,19 @@ import {
   TextInput,
   TouchableOpacity,
   Animated,
+  Alert
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import styles from './style/';
 import { connect } from 'react-redux'
+import Axios from 'axios';
+import {API_URL} from '@env'
 
 export class OtpScreen extends Component {
     constructor(props) {
       super(props);
       this.state = {
-        name: '',
-        email: '',
-        password: '',
+        otp: '',
         nameValidate: new Animated.Value(0),
         emailValidate: new Animated.Value(0),
         emailValidateRegex: new Animated.Value(0),
@@ -34,8 +35,9 @@ export class OtpScreen extends Component {
     }
   
     handleRegister() {
-      let reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-      if (this.state.email === '') {
+      let reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+      let regex = /^[0-9][A-Za-z0-9 -]*$/
+      if (this.state.otp === '') {
         // ====================================================
         // hide alert name
         Animated.timing(this.state.nameValidate, {
@@ -50,7 +52,7 @@ export class OtpScreen extends Component {
           useNativeDriver : false
         }).start();
         this.setState({marginBottomEmail: 4, marginTopEmail: 3});
-      } else if (reg.test(this.state.email) === false) {
+      } else if (regex.test(this.state.otp) === false) {
         // ======================================================
         // hide alert name
         Animated.timing(this.state.nameValidate, {
@@ -101,6 +103,33 @@ export class OtpScreen extends Component {
           useNativeDriver : false
         }).start();
       } else {
+        Axios({
+          method : 'POST',
+          url : `${API_URL}auth/activation`,
+          data : {
+            email : this.props.route.params.email,
+            code : this.state.otp
+          }
+        }).then((res)=>{
+          Alert.alert(
+            'Done !!',
+            'Actiovation Success!! Lets Login',
+            [
+              { text: 'OK', onPress: () => this.props.navigation.navigate('Login') }
+            ],
+            { cancelable: false }
+          );
+        }).catch((err)=>{
+          console.log(err.response.data)
+          Alert.alert(
+            'Oopss!!',
+            err.response.data.data,
+            [
+              { text: 'OK', onPress: () => console.log('OK Pressed') }
+            ],
+            { cancelable: false }
+          );
+        })
       }
     }
     render() {
@@ -130,7 +159,7 @@ export class OtpScreen extends Component {
                     marginLeft: 14,
                   }}
                   placeholder="OTP"
-                  onChangeText={(text) => this.setState({email: text})}
+                  onChangeText={(text) => this.setState({otp: text})}
                   value={this.email}
                 />
               </View>
@@ -160,7 +189,7 @@ export class OtpScreen extends Component {
                   },
                 ]}>
                 <Text style={{color: 'red', fontWeight: 'bold'}}>
-                  Email not valid
+                  Otp not valid
                 </Text>
               </Animated.View>
             </View>

@@ -4,7 +4,7 @@ const initialState = {
     errorMsg : '' ,
     successMsg : 'Helloo',
     auth : {},
-    isLogin : true,
+    isLogin : false,
 }
 
 const auth = (state = initialState,action) =>{
@@ -23,7 +23,8 @@ const auth = (state = initialState,action) =>{
             isError : true,
             errorMsg : 'Error'
         }
-        case "LOGIN_FULFILLED": 
+        case "LOGIN_FULFILLED":
+            console.log(action.payload.data) 
         return { 
             ...state,
             isLoading : false,
@@ -60,14 +61,18 @@ const auth = (state = initialState,action) =>{
         return {
             ...state,
             isLoading : true,
-            errorMsg : action.payload.response.data.msg
+            // errorMsg : action.payload.response.data.msg
         }
         case 'REGISTER_FULFILLED' :
             console.log(action.payload)
         return {
             ...state,
             isLoading : true,
-            successMsg : action.payload.data.msg
+            // successMsg : action.payload.data.msg
+        }
+        case 'TOKEN' : 
+        return {
+            ...state,
         }
         case 'UPDATE_PENDING' :
         return {
