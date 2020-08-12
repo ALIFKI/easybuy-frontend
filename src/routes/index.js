@@ -54,299 +54,298 @@ export class Route extends Component {
             />
           )}
           {this.props.user.isLogin ? (
-          <>
-            <Stack.Screen
-              name="Dashboard"
-              component={TabsBar}
-              options={{headerShown: false}}
-            />
-            <Stack.Screen
-              name="Product"
-              component={ProductScreen}
-              options={({route, navigation}) => ({
-                title: route.params.name,
-                headerLeft: () => (
-                  <IonIcon
-                    name={'chevron-back-outline'}
-                    size={25}
-                    onPress={() => {
-                      navigation.goBack();
-                    }}
-                  />
-                ),
-                headerStyle: {
-                  shadowColor: '#000',
-                  shadowOffset: {
-                    width: 0,
-                    height: 4,
+            <>
+              <Stack.Screen
+                name="Dashboard"
+                component={TabsBar}
+                options={{headerShown: false}}
+              />
+              <Stack.Screen
+                name="Product"
+                component={ProductScreen}
+                options={({route, navigation}) => ({
+                  title: route.params.name,
+                  headerLeft: () => (
+                    <IonIcon
+                      name={'chevron-back-outline'}
+                      size={25}
+                      onPress={() => {
+                        navigation.goBack();
+                      }}
+                    />
+                  ),
+                  headerStyle: {
+                    shadowColor: '#000',
+                    shadowOffset: {
+                      width: 0,
+                      height: 4,
+                    },
+                    shadowOpacity: 0.3,
+                    shadowRadius: 4.65,
+
+                    elevation: 8,
                   },
-                  shadowOpacity: 0.3,
-                  shadowRadius: 4.65,
+                  headerTitleStyle: {
+                    marginLeft: -50,
+                    fontFamily: 'Metropolis-Medium',
+                    alignSelf: 'center',
+                  },
+                })}
+              />
+              <Stack.Screen
+                name="Filter"
+                component={FilterScreen}
+                options={({route, navigation}) => ({
+                  title: 'Filter',
+                  headerLeft: () => (
+                    <IonIcon
+                      name={'chevron-back-outline'}
+                      size={25}
+                      onPress={() => {
+                        navigation.goBack();
+                      }}
+                    />
+                  ),
+                  headerStyle: {
+                    elevation: 0,
+                    shadowOpacity: 0,
+                  },
+                  headerTitleStyle: {
+                    marginLeft: -50,
+                    fontFamily: 'Metropolis-Medium',
+                    alignSelf: 'center',
+                  },
+                })}
+              />
+              <Stack.Screen
+                name="Shop"
+                component={ProductScreen}
+                options={({route, navigation}) => ({
+                  headerLeft: () => (
+                    <IonIcon
+                      name={'chevron-back-outline'}
+                      size={25}
+                      onPress={() => {
+                        navigation.goBack();
+                      }}
+                    />
+                  ),
+                  headerStyle: {
+                    elevation: 0,
+                    shadowOpacity: 0,
+                  },
+                  headerTitleStyle: {
+                    marginLeft: -50,
+                    fontFamily: 'Metropolis-Medium',
+                    alignSelf: 'center',
+                  },
+                })}
+              />
+              <Stack.Screen
+                name="CheckOut"
+                component={CheckoutScreen}
+                options={({route, navigation}) => ({
+                  headerLeft: () => (
+                    <IonIcon
+                      name={'chevron-back-outline'}
+                      size={25}
+                      onPress={() => {
+                        navigation.goBack();
+                      }}
+                    />
+                  ),
+                  headerStyle: {
+                    elevation: 1,
+                    shadowOpacity: 1,
+                  },
+                  headerTitleStyle: {
+                    marginLeft: -50,
+                    fontFamily: 'Metropolis-Medium',
+                    alignSelf: 'center',
+                  },
+                })}
+              />
 
-                  elevation: 8,
-                },
-                headerTitleStyle: {
-                  marginLeft: -50,
-                  fontFamily: 'Metropolis-Medium',
-                  alignSelf: 'center',
-                },
-              })}
-            />
-            <Stack.Screen
-              name="Filter"
-              component={FilterScreen}
-              options={({route, navigation}) => ({
-                title: 'Filter',
-                headerLeft: () => (
-                  <IonIcon
-                    name={'chevron-back-outline'}
-                    size={25}
-                    onPress={() => {
-                      navigation.goBack();
-                    }}
-                  />
-                ),
-                headerStyle: {
-                  elevation: 0,
-                  shadowOpacity: 0,
-                },
-                headerTitleStyle: {
-                  marginLeft: -50,
-                  fontFamily: 'Metropolis-Medium',
-                  alignSelf: 'center',
-                },
-              })}
-            />
-            <Stack.Screen
-              name="Shop"
-              component={ProductScreen}
-              options={({route, navigation}) => ({
-                headerLeft: () => (
-                  <IonIcon
-                    name={'chevron-back-outline'}
-                    size={25}
-                    onPress={() => {
-                      navigation.goBack();
-                    }}
-                  />
-                ),
-                headerStyle: {
-                  elevation: 0,
-                  shadowOpacity: 0,
-                },
-                headerTitleStyle: {
-                  marginLeft: -50,
-                  fontFamily: 'Metropolis-Medium',
-                  alignSelf: 'center',
-                },
-              })}
-            />
-            <Stack.Screen
-              name="CheckOut"
-              component={CheckoutScreen}
-              options={({route, navigation}) => ({
-                headerLeft: () => (
-                  <IonIcon
-                    name={'chevron-back-outline'}
-                    size={25}
-                    onPress={() => {
-                      navigation.goBack();
-                    }}
-                  />
-                ),
-                headerStyle: {
-                  elevation: 1,
-                  shadowOpacity: 1,
-                },
-                headerTitleStyle: {
-                  marginLeft: -50,
-                  fontFamily: 'Metropolis-Medium',
-                  alignSelf: 'center',
-                },
-              })}
-            />
+              <Stack.Screen
+                name="ShipingAddress"
+                component={ShippingAddreess}
+                options={({route, navigation}) => ({
+                  headerLeft: () => (
+                    <IonIcon
+                      name={'chevron-back-outline'}
+                      size={25}
+                      onPress={() => {
+                        navigation.goBack();
+                      }}
+                    />
+                  ),
+                  headerStyle: {
+                    elevation: 1,
+                    shadowOpacity: 1,
+                  },
+                  headerTitleStyle: {
+                    marginLeft: -50,
+                    fontFamily: 'Metropolis-Medium',
+                    alignSelf: 'center',
+                  },
+                })}
+              />
 
-            <Stack.Screen
-              name="ShipingAddress"
-              component={ShippingAddreess}
-              options={({route, navigation}) => ({
-                headerLeft: () => (
-                  <IonIcon
-                    name={'chevron-back-outline'}
-                    size={25}
-                    onPress={() => {
-                      navigation.goBack();
-                    }}
-                  />
-                ),
-                headerStyle: {
-                  elevation: 1,
-                  shadowOpacity: 1,
-                },
-                headerTitleStyle: {
-                  marginLeft: -50,
-                  fontFamily: 'Metropolis-Medium',
-                  alignSelf: 'center',
-                },
-              })}
-            />
+              <Stack.Screen
+                name="Change Address"
+                component={ChangeShipingAddress}
+                options={({route, navigation}) => ({
+                  headerLeft: () => (
+                    <IonIcon
+                      name={'chevron-back-outline'}
+                      size={25}
+                      onPress={() => {
+                        navigation.goBack();
+                      }}
+                    />
+                  ),
+                  headerStyle: {
+                    elevation: 1,
+                    shadowOpacity: 1,
+                  },
+                  headerTitleStyle: {
+                    marginLeft: -50,
+                    fontFamily: 'Metropolis-Medium',
+                    alignSelf: 'center',
+                  },
+                })}
+              />
 
-            <Stack.Screen
-              name="Change Address"
-              component={ChangeShipingAddress}
-              options={({route, navigation}) => ({
-                headerLeft: () => (
-                  <IonIcon
-                    name={'chevron-back-outline'}
-                    size={25}
-                    onPress={() => {
-                      navigation.goBack();
-                    }}
-                  />
-                ),
-                headerStyle: {
-                  elevation: 1,
-                  shadowOpacity: 1,
-                },
-                headerTitleStyle: {
-                  marginLeft: -50,
-                  fontFamily: 'Metropolis-Medium',
-                  alignSelf: 'center',
-                },
-              })}
-            />
+              <Stack.Screen
+                name="Add Shipping Address"
+                component={AddShipingAdress}
+                options={({route, navigation}) => ({
+                  headerLeft: () => (
+                    <IonIcon
+                      name={'chevron-back-outline'}
+                      size={25}
+                      onPress={() => {
+                        navigation.goBack();
+                      }}
+                    />
+                  ),
+                  headerStyle: {
+                    elevation: 1,
+                    shadowOpacity: 1,
+                  },
+                  headerTitleStyle: {
+                    marginLeft: -50,
+                    fontFamily: 'Metropolis-Medium',
+                    alignSelf: 'center',
+                  },
+                })}
+              />
+              <Stack.Screen
+                name="Setting"
+                component={SettingScreen}
+                options={({route, navigation}) => ({
+                  headerShown: false,
+                  title: '',
+                  headerLeft: () => (
+                    <IonIcon
+                      name={'chevron-back-outline'}
+                      size={25}
+                      onPress={() => {
+                        navigation.goBack();
+                      }}
+                    />
+                  ),
+                  headerRight: () => (
+                    <IonIcon
+                      name={'search-outline'}
+                      size={25}
+                      onPress={() => {
+                        navigation.goBack();
+                      }}
+                    />
+                  ),
+                  headerStyle: {
+                    elevation: 0,
+                    shadowOpacity: 0,
+                    backgroundColor: '',
+                  },
+                  headerTitleStyle: {
+                    marginLeft: -50,
+                    fontFamily: 'Metropolis-Medium',
+                    alignSelf: 'center',
+                  },
+                })}
+              />
+              <Stack.Screen
+                name="OrderDetail"
+                component={OrderDetailScreen}
+                options={({route, navigation}) => ({
+                  headerShown: true,
+                  title: 'Order Details',
+                  headerLeft: () => (
+                    <IonIcon
+                      name={'chevron-back-outline'}
+                      size={25}
+                      onPress={() => {
+                        navigation.goBack();
+                      }}
+                    />
+                  ),
+                  headerRight: () => (
+                    <IonIcon
+                      name={'search-outline'}
+                      size={25}
+                      onPress={() => {
+                        navigation.goBack();
+                      }}
+                    />
+                  ),
+                  headerStyle: {},
+                  headerTitleStyle: {
+                    marginLeft: -20,
+                    fontFamily: 'Metropolis-Medium',
+                    alignSelf: 'center',
+                  },
+                })}
+              />
+              <Stack.Screen
+                name="My Orders"
+                component={MyOrderScreen}
+                options={({route, navigation}) => ({
+                  headerLeft: () => (
+                    <IonIcon
+                      name={'chevron-back-outline'}
+                      size={25}
+                      onPress={() => {
+                        navigation.goBack();
+                      }}
+                    />
+                  ),
+                  headerStyle: {
+                    elevation: 0,
+                    shadowOpacity: 0,
+                  },
+                  headerTitleStyle: {
+                    marginLeft: -50,
+                    fontFamily: 'Metropolis-Medium',
+                    alignSelf: 'center',
+                  },
+                })}
+              />
 
-            <Stack.Screen
-              name="Add Shipping Address"
-              component={AddShipingAdress}
-              options={({route, navigation}) => ({
-                headerLeft: () => (
-                  <IonIcon
-                    name={'chevron-back-outline'}
-                    size={25}
-                    onPress={() => {
-                      navigation.goBack();
-                    }}
-                  />
-                ),
-                headerStyle: {
-                  elevation: 1,
-                  shadowOpacity: 1,
-                },
-                headerTitleStyle: {
-                  marginLeft: -50,
-                  fontFamily: 'Metropolis-Medium',
-                  alignSelf: 'center',
-                },
-              })}
-            />
-            <Stack.Screen
-              name="Setting"
-              component={SettingScreen}
-              options={({route, navigation}) => ({
-                headerShown : false,
-                title: '',
-                headerLeft: () => (
-                  <IonIcon
-                    name={'chevron-back-outline'}
-                    size={25}
-                    onPress={() => {
-                      navigation.goBack();
-                    }}
-                  />
-                ),
-                headerRight: () => (
-                  <IonIcon
-                    name={'search-outline'}
-                    size={25}
-                    onPress={() => {
-                      navigation.goBack();
-                    }}
-                  />
-                ),
-                headerStyle: {
-                  elevation: 0,
-                  shadowOpacity: 0,
-                  backgroundColor : ''
-                },
-                headerTitleStyle: {
-                  marginLeft: -50,
-                  fontFamily: 'Metropolis-Medium',
-                  alignSelf: 'center',
-                },
-              })}
-            />
-            <Stack.Screen
-              name="OrderDetail"
-              component={OrderDetailScreen}
-              options={({route, navigation}) => ({
-                headerShown : true,
-                title: 'Order Details',
-                headerLeft: () => (
-                  <IonIcon
-                    name={'chevron-back-outline'}
-                    size={25}
-                    onPress={() => {
-                      navigation.goBack();
-                    }}
-                  />
-                ),
-                headerRight: () => (
-                  <IonIcon
-                    name={'search-outline'}
-                    size={25}
-                    onPress={() => {
-                      navigation.goBack();
-                    }}
-                  />
-                ),
-                headerStyle: {
-                },
-                headerTitleStyle: {
-                  marginLeft: -20,
-                  fontFamily: 'Metropolis-Medium',
-                  alignSelf: 'center',
-                },
-              })}
-            />
-            <Stack.Screen
-              name="My Orders"
-              component={MyOrderScreen}
-              options={({route, navigation}) => ({
-                headerLeft: () => (
-                  <IonIcon
-                    name={'chevron-back-outline'}
-                    size={25}
-                    onPress={() => {
-                      navigation.goBack();
-                    }}
-                  />
-                ),
-                headerStyle: {
-                  elevation: 0,
-                  shadowOpacity: 0,
-                },
-                headerTitleStyle: {
-                  marginLeft: -50,
-                  fontFamily: 'Metropolis-Medium',
-                  alignSelf: 'center',
-                },
-              })}
-            />
-
-            <Stack.Screen
-              options={{headerShown: false}}
-              name="Success Screen"
-              component={SuccessScreen}
-            />
-            <Stack.Screen
-              name="Search"
-              component={SearchScreen}
-              options={{headerShown: false}}
-            />
-          </>
+              <Stack.Screen
+                options={{headerShown: false}}
+                name="Success Screen"
+                component={SuccessScreen}
+              />
+              <Stack.Screen
+                name="Search"
+                component={SearchScreen}
+                options={{headerShown: false}}
+              />
+            </>
           ) : (
-          <>
+            <>
               <Stack.Screen
                 name="Login"
                 component={LoginScreen}
