@@ -7,56 +7,65 @@ import * as RootNavigation from '../../routes/RootNav';
 import {API_URL} from '@env';
 
 class ProductWrapper extends Component {
-    constructor(props){
-        super(props)
-    }
-    render() {
-        return (
-            <>
-                <View style={style.productCardWrapper}>
-                    <FlatList
-                        style={{marginBottom : 0}}
-                        horizontal
-                        showsHorizontalScrollIndicator={false}
-                        data={this.props.data}
-                        renderItem={({ item: rowData }) => {
-                        return (
-                                <TouchableOpacity
-                                    onPress={()=>{RootNavigation.navigate('Product',{name : 'T-Shert'})}}
-                                    style={[{
-                                        marginLeft : 8,
-                                        marginRight : 8
-                                    },style.productCard]}
-                                >
-                                    <View style={style.Badge}>
-                                        <Text style={style.badgeText}>
-                                            New
-                                        </Text>
-                                    </View>
-                                    <Image source={{uri : rowData.imageUrl}} style={{height : 190,width : 148,borderRadius : 5}}/>
-                                    <View style={style.DetailProduct}>
-                                        <View style={style.start}>
-                                            <StartComponet/>
-                                        </View>
-                                        <Text style={style.styles}>
-                                            Mango boy
-                                        </Text>
-                                        <Text style={style.model}>
-                                            Blouse
-                                        </Text>
-                                        <Text style={style.price}>
-                                            $30
-                                        </Text>
-                                    </View>
-                                </TouchableOpacity>
-                            );
-                            }}
-                            keyExtractor={(item, index) => index.toString()}
-                        />
-                </View>
-            </>
-        )
-    }
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    console.log(this.props);
+    let maxlimit = 17;
+    return (
+      <>
+        <View style={style.productCardWrapper}>
+          <FlatList
+            style={{marginBottom: 0}}
+            horizontal
+            data={this.props.data}
+            renderItem={({item: rowData}) => {
+              return (
+                <TouchableOpacity
+                  onPress={() => {
+                    RootNavigation.navigate('Product', rowData);
+                  }}
+                  style={[
+                    {
+                      marginLeft: 8,
+                      marginRight: 8,
+                    },
+                    style.productCard,
+                  ]}>
+                  <View style={style.Badge}>
+                    <Text style={style.badgeText}>New</Text>
+                  </View>
+                  <Image
+                    source={{uri: API_URL + 'img/' + rowData.image}}
+                    style={{height: 184, width: 148, borderRadius: 5}}
+                  />
+                  <View style={style.DetailProduct}>
+                    <View style={style.start}>
+                      <StartComponet star={rowData.rating} />
+                    </View>
+                    <Text style={style.styles}>
+                      {rowData.brand.length}
+                      {rowData.brand.length > maxlimit
+                        ? rowData.brand.substring(0, maxlimit - 3) + '...'
+                        : rowData.brand}
+                    </Text>
+                    <Text style={style.model}>
+                      {rowData.name.length > maxlimit
+                        ? rowData.name.substring(0, maxlimit - 3) + '...'
+                        : rowData.name}
+                    </Text>
+                    <Text style={style.price}>${rowData.price}</Text>
+                  </View>
+                </TouchableOpacity>
+              );
+            }}
+            keyExtractor={(item, index) => index.toString()}
+          />
+        </View>
+      </>
+    );
+  }
 }
 
 export default ProductWrapper;
