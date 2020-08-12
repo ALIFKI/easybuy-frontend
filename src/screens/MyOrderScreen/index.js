@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import {Text, View, ScrollView, Image, TouchableOpacity} from 'react-native';
 import style from './style';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import IonIcon from 'react-native-vector-icons/Ionicons'
+
 class MyOrders extends Component {
   constructor(props) {
     super(props);
