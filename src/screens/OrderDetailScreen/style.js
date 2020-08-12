@@ -13,6 +13,12 @@ const style = StyleSheet.create({
         justifyContent : 'space-between',
         paddingBottom : 10
     },
+    listInfo : {
+        display : 'flex',
+        flexDirection : 'row',
+        justifyContent : 'space-between',
+        paddingBottom : 10
+    },
     text : {
         fontSize : 14,
         fontFamily : 'Metropolis-Regular',

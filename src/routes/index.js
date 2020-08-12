@@ -53,7 +53,7 @@ export class Route extends Component {
               options={{headerShown: false}}
             />
           )}
-          {/* {this.props.user.isLogin ? ( */}
+          {this.props.user.isLogin ? (
           <>
             <Stack.Screen
               name="Dashboard"
@@ -345,8 +345,8 @@ export class Route extends Component {
               options={{headerShown: false}}
             />
           </>
-          {/* ) : ( */}
-          {/* <>
+          ) : (
+          <>
               <Stack.Screen
                 name="Login"
                 component={LoginScreen}
@@ -372,8 +372,8 @@ export class Route extends Component {
                 component={ResetPassword}
                 options={{headerShown: false}}
               />
-            </> */}
-          {/* )} */}
+            </>
+          )}
         </Stack.Navigator>
       </NavigationContainer>
     );
