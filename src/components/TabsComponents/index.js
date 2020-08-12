@@ -8,7 +8,8 @@ import {connect} from 'react-redux';
 import HomeScreen from '../../screens/HomeScreen';
 import CartScreen from '../../screens/CartScreen';
 import ShopScreen from '../../screens/ShopScreen';
-
+import Icon from 'react-native-vector-icons/FontAwesome';
+import ProfileScreen from '../../screens/ProfileScreen';
 const Tab = createBottomTabNavigator();
 
 export default function TabsBar() {
@@ -50,7 +51,17 @@ export default function TabsBar() {
         component={CartScreen}
         options={{
           tabBarIcon: ({color, size}) => (
-            <Ion name="cart-outline" color={color} size={size} />
+            <Icon name="shopping-bag" color={color} size={size} />
+          ),
+        }}
+      />
+
+      <Tab.Screen
+        name="Users"
+        component={ProfileScreen}
+        options={{
+          tabBarIcon: ({color, size}) => (
+            <Icon name="user-circle-o" color={color} size={size} />
           ),
         }}
       />
