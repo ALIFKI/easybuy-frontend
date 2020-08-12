@@ -277,7 +277,7 @@ export class Route extends Component {
                 options={{headerShown: false}}
               />
             </>
-          )}
+          )}*/}
         </Stack.Navigator>
       </NavigationContainer>
     );
