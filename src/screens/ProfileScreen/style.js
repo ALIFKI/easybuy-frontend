@@ -3,10 +3,11 @@ import {StyleSheet, Dimensions} from 'react-native';
 const width = Dimensions.get('screen').width;
 const style = StyleSheet.create({
   container: {
-    marginLeft: 13,
     marginTop: 12,
-    marginRight: 13,
+    marginLeft: 13,
+    paddingRight: 13,
     height: 100,
+    marginBottom: 20,
   },
   textHeader: {
     fontWeight: 'bold',
