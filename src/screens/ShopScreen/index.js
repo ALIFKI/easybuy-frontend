@@ -61,7 +61,7 @@ class ShopScreen extends Component {
             method : 'GET',
             url : `${API_URL}product?sort=${this.state.sort}&search=${this.state.search}&color=${this.state.color}&size=${this.state.size}&category=${this.state.category}&limit&page=${this.state.page}`
         }).then((res)=>{
-            // console.log(res)
+            // console.log(res) 
             this.setState({
                 data : res.data.data
             })
