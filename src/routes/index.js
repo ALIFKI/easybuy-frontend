@@ -20,6 +20,7 @@ import ChangeShipingAddress from '../screens/ChangeAddressScreen';
 import AddShipingAdress from '../screens/AddingShipingAddressScreen';
 import SuccessScreen from '../screens/SuccessScreen';
 import {SearchScreen} from '../screens/SearchScreen';
+import SettingScreen from '../screens/SettingScreen';
 
 const Stack = createStackNavigator();
 
@@ -229,6 +230,42 @@ export class Route extends Component {
                 headerStyle: {
                   elevation: 1,
                   shadowOpacity: 1,
+                },
+                headerTitleStyle: {
+                  marginLeft: -50,
+                  fontFamily: 'Metropolis-Medium',
+                  alignSelf: 'center',
+                },
+              })}
+            />
+            <Stack.Screen
+              name="Setting"
+              component={SettingScreen}
+              options={({route, navigation}) => ({
+                headerShown : false,
+                title: '',
+                headerLeft: () => (
+                  <IonIcon
+                    name={'chevron-back-outline'}
+                    size={25}
+                    onPress={() => {
+                      navigation.goBack();
+                    }}
+                  />
+                ),
+                headerRight: () => (
+                  <IonIcon
+                    name={'search-outline'}
+                    size={25}
+                    onPress={() => {
+                      navigation.goBack();
+                    }}
+                  />
+                ),
+                headerStyle: {
+                  elevation: 0,
+                  shadowOpacity: 0,
+                  backgroundColor : ''
                 },
                 headerTitleStyle: {
                   marginLeft: -50,
