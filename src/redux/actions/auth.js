@@ -6,9 +6,9 @@ export const login = data => {
         payload :
         axios({
             method: 'POST',
-            url : `${API_URL}api/users/login`,
+            url : `${API_URL}auth/login`,
             data : {
-                email : data.username,
+                email : data.email,
                 password : data.password
             }
         }),
@@ -27,11 +27,12 @@ export const register = data =>{
         payload : 
         axios({
             method: 'POST',
-            url : `${API_URL}api/users/registers`,
+            url : `${API_URL}auth/register`,
             data : {
                 name : data.name,
                 email : data.email,
                 password : data.password,
+                birthday : "2001-05-02"
             }
         })
     }
