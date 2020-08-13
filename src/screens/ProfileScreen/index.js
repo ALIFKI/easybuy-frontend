@@ -77,7 +77,7 @@ class ProfileScreen extends Component {
           </View>
 
           <TouchableOpacity
-            onPress={() => this.props.navigation.navigate('My Orders')}
+            onPress={() => this.props.navigation.navigate('MyOrder')}
             style={{marginTop: 40, flexDirection: 'row'}}>
             <View>
               <Text style={{fontWeight: 'bold', fontSize: 20}}>My Orders</Text>
@@ -92,7 +92,11 @@ class ProfileScreen extends Component {
             />
           </TouchableOpacity>
 
-          <TouchableOpacity style={{marginTop: 40, flexDirection: 'row'}}>
+          <TouchableOpacity 
+          onPress={
+            ()=>{this.props.navigation.navigate('ShipingAddress')}
+          }
+          style={{marginTop: 40, flexDirection: 'row'}}>
             <View>
               <Text style={{fontWeight: 'bold', fontSize: 20}}>
                 Shipping Address

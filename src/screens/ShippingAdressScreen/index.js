@@ -81,11 +81,13 @@ class ShipingAdrress extends Component {
           </View>
         </View>
 
-        <View style={style.button}>
+        <TouchableOpacity 
+        onPress={()=>{this.props.navigation.navigate('Add Shipping Address')}}
+        style={style.button}>
           <Text style={{textAlign: 'center', fontSize: 18, marginTop: 15}}>
             ADD NEW ADDRESS
           </Text>
-        </View>
+        </TouchableOpacity>
       </ScrollView>
     );
   }
