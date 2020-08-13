@@ -32,9 +32,6 @@ class ShopScreen extends Component {
     this._handleGetData();
     console.log('res');
   }
-  UNSAFE_componentWillMount() {
-    console.log('res');
-  }
   shouldComponentUpdate(nextProps, nextState) {
     // this._handleGetData()
     return true;
@@ -127,7 +124,7 @@ class ShopScreen extends Component {
                             <IonIcon name={'search-outline'} size={25}/>
                         </TouchableOpacity>
                     </View>
-                    <HeaderTitleComponents title={'Women Top'}/>
+                    <HeaderTitleComponents title={'Shop'}/>
                     <View style={style.filter}>
                         <FilterBtn text={'Filter'} icon={'filter-outline'} onPress={()=>{this.props.navigation.navigate('Filter')}}/>
                         <FilterBtn text={this.state.soryBy} icon={'swap-vertical-outline'} onPress={()=>{this.setState({ModalSort:true})}}/>
