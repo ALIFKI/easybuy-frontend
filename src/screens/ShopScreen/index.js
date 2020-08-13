@@ -11,6 +11,7 @@ import ModalSort from '../../components/ModalSort'
 import FilterBtn from '../../components/FilterBtn'
 import {API_URL} from '@env'
 import Axios from 'axios'
+import { connect } from 'react-redux'
 
 class ShopScreen extends Component {
     constructor(props){
@@ -59,6 +60,9 @@ class ShopScreen extends Component {
         console.log('handle')
         Axios({
             method : 'GET',
+            headers : {
+                Authorization : this.props.user.auth.token
+            },
             url : `${API_URL}product?sort=${this.state.sort}&search=${this.state.search}&color=${this.state.color}&size=${this.state.size}&category=${this.state.category}&limit&page=${this.state.page}`
         }).then((res)=>{
             // console.log(res) 
@@ -85,7 +89,6 @@ class ShopScreen extends Component {
                 data : newArr,
                 // page : parseInt(res.value.data.pageInfo.current_page)
             })
-
         }).catch((err)=>{
             console.log(err.response)
         })
@@ -113,7 +116,7 @@ class ShopScreen extends Component {
             <ScrollView
             onScroll={({nativeEvent}) => {
                 if (isCloseToBottom(nativeEvent)) {
-                this.handlePagination()
+                // this.handlePagination()
                 }
             }}
             >
@@ -130,7 +133,7 @@ class ShopScreen extends Component {
                     <View style={style.filter}>
                         <FilterBtn text={'Filter'} icon={'filter-outline'} onPress={()=>{this.props.navigation.navigate('Filter')}}/>
                         <FilterBtn text={this.state.soryBy} icon={'swap-vertical-outline'} onPress={()=>{this.setState({ModalSort:true})}}/>
-                        <FilterBtn text={''} icon={'filter-outline'} onPress={this._handleGetData}/>
+                        <FilterBtn text={''} icon={'refresh-outline'} onPress={this._handleGetData}/>
                     </View>
                 </View>
                 <View style={style.mainContent} >
@@ -150,4 +153,8 @@ class ShopScreen extends Component {
     }
 }
 
-export default ShopScreen
+const mapStateToProps = state =>({
+    user : state.auth
+})
+
+export default connect(mapStateToProps)(ShopScreen)
