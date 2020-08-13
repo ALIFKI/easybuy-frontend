@@ -29,6 +29,28 @@ const cart = (state = initialState, action) => {
         isSuccess: false,
         data: action.payload.data.data,
       };
+    case 'MY_CART_PENDING':
+      return {
+        ...state,
+        isLoading: true,
+        isError: false,
+        isSuccess: false,
+      };
+    case 'MY_CART_REJECTED':
+      return {
+        ...state,
+        isLoading: false,
+        isError: true,
+        isSuccess: false,
+      };
+    case 'MY_CART_FULFILLED':
+      return {
+        ...state,
+        isLoading: true,
+        isError: false,
+        isSuccess: false,
+        data: action.payload.data.data,
+      };
     default:
       return state;
   }

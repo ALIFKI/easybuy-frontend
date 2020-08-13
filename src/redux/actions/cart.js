@@ -14,3 +14,16 @@ export const addToCart = (token, product_id, data) => {
     }),
   };
 };
+
+export const myCart = (token) => {
+  return {
+    type: 'MY_CART',
+    payload: axios({
+      method: 'GET',
+      url: API_URL + 'cart/',
+      headers: {
+        Authorization: token,
+      },
+    }),
+  };
+};
