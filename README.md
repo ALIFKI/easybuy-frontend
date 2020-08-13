@@ -43,6 +43,5 @@
 - [Ismoyo](https://github.com/ismoyo23) (frontend)
 - [Abiyasa](https://github.com/byasaa) (backend)
 - [Daniel](https://github.com/danielwetan) (full-stack)
-danielwetandanielwetandanielwetandanielwetandanielwetandanielwetanbonjourhttps://google.comhttps://google.com
 ## License
 This project is licensed under the MIT License - see the [LICENSE](https://github.com/ALIFKI/easybuy-frontendblob/master/LICENSE) file for details
