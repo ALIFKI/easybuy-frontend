@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import { Text, View, ScrollView, Image } from 'react-native';
+import React, {Component} from 'react';
+import {Text, View, ScrollView, Image} from 'react-native';
 import style from './style';
 import IonIcon from 'react-native-vector-icons/Ionicons';
 import HeaderTitleComponents from '../../components/HeaderTitleComponents';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import {TouchableOpacity} from 'react-native-gesture-handler';
 import image from '../../assets/image/banner.png';
 import StartComponet from '../../components/StarComponent';
 import CardShop from '../../components/CardShopComponent';
@@ -20,7 +20,7 @@ class ShopScreen extends Component {
   render() {
     return (
       <View>
-        <ScrollView style={{ height: 400 }}>
+        <ScrollView style={{height: 400}}>
           <Icon
             name="search"
             size={23}
@@ -40,7 +40,7 @@ class ShopScreen extends Component {
               elevation: 2,
             }}
           />
-          <View style={{ marginLeft: 10, marginRight: 10 }}>
+          <View style={{marginLeft: 10, marginRight: 10}}>
             <Text
               style={{
                 fontSize: 35,
@@ -67,9 +67,9 @@ class ShopScreen extends Component {
 
                 elevation: 4,
               }}>
-              <View style={{ flexDirection: 'row' }}>
-                <Image source={image} style={{ width: 100 }} />
-                <View style={{ marginLeft: 9 }}>
+              <View style={{flexDirection: 'row'}}>
+                <Image source={image} style={{width: 100}} />
+                <View style={{marginLeft: 9}}>
                   <Text
                     style={{
                       fontSize: 20,
@@ -78,7 +78,7 @@ class ShopScreen extends Component {
                     }}>
                     Title
                   </Text>
-                  <View style={{ flexDirection: 'row', height: 140 }}>
+                  <View style={{flexDirection: 'row', height: 140}}>
                     <Text
                       style={{
                         fontSize: 15,
@@ -133,38 +133,38 @@ class ShopScreen extends Component {
                           </Text>
                         </TouchableOpacity>
                       ) : (
-                          <TouchableOpacity
-                            onPress={() =>
-                              this.setState({ count: this.state.count - 1 })
-                            }
-                            style={{
-                              shadowColor: '#000',
-                              shadowOffset: {
-                                width: 1,
-                                height: 2,
-                              },
-                              shadowOpacity: 1,
-                              shadowRadius: 3.84,
+                        <TouchableOpacity
+                          onPress={() =>
+                            this.setState({count: this.state.count - 1})
+                          }
+                          style={{
+                            shadowColor: '#000',
+                            shadowOffset: {
+                              width: 1,
+                              height: 2,
+                            },
+                            shadowOpacity: 1,
+                            shadowRadius: 3.84,
 
-                              elevation: 5,
-                              marginTop: 30,
-                              backgroundColor: 'white',
-                              width: 40,
-                              height: 40,
-                              borderRadius: 50,
+                            elevation: 5,
+                            marginTop: 30,
+                            backgroundColor: 'white',
+                            width: 40,
+                            height: 40,
+                            borderRadius: 50,
+                          }}>
+                          <Text
+                            style={{
+                              color: 'grey',
+                              textAlign: 'center',
+                              marginTop: 2,
+                              fontSize: 26,
+                              fontFamily: 'Poppins-Medium',
                             }}>
-                            <Text
-                              style={{
-                                color: 'grey',
-                                textAlign: 'center',
-                                marginTop: 2,
-                                fontSize: 26,
-                                fontFamily: 'Poppins-Medium',
-                              }}>
-                              -
+                            -
                           </Text>
-                          </TouchableOpacity>
-                        )}
+                        </TouchableOpacity>
+                      )}
 
                       <TouchableOpacity
                         style={{
@@ -186,7 +186,7 @@ class ShopScreen extends Component {
 
                       <TouchableOpacity
                         onPress={() =>
-                          this.setState({ count: this.state.count + 1 })
+                          this.setState({count: this.state.count + 1})
                         }
                         style={{
                           shadowColor: '#000',
