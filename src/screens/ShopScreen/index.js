@@ -14,48 +14,47 @@ import Axios from 'axios'
 import { connect } from 'react-redux'
 
 class ShopScreen extends Component {
-    constructor(props){
-        super(props)
-        this.state = {
-            ModalSort : false,
-            sort : '',
-            search : '',
-            color : '',
-            size : '',
-            category : '',
-            page : 1,
-            data : [],
-            soryBy : 'Popular'
-        }
+  constructor(props) {
+    super(props);
+    this.state = {
+      ModalSort: false,
+      sort: '',
+      search: '',
+      color: '',
+      size: '',
+      category: '',
+      page: 1,
+      data: [],
+      soryBy: 'Popular',
+    };
+  }
+  componentDidMount() {
+    this._handleGetData();
+    console.log('res');
+  }
+  UNSAFE_componentWillMount() {
+    console.log('res');
+  }
+  shouldComponentUpdate(nextProps, nextState) {
+    // this._handleGetData()
+    return true;
+  }
+  componentDidUpdate(prevProps, prevState) {
+    // this._handleGetData()
+    // if(this.props.route.params.data !== undefined){
+    //     this._handleGetData()
+    // }
+  }
+  static getDerivedStateFromProps(props, state) {
+    if (props.route.params !== undefined) {
+      return {
+        ...state,
+        ...props.route.params.data,
+      };
+    } else {
+      return null;
     }
-    componentDidMount(){
-        this._handleGetData()
-        console.log('res')
-    }
-    UNSAFE_componentWillMount(){
-        console.log('res')
-    }
-    shouldComponentUpdate(nextProps, nextState){
-        // this._handleGetData()
-        return true
-    }
-    componentDidUpdate(prevProps,prevState){
-        // this._handleGetData()
-        // if(this.props.route.params.data !== undefined){
-        //     this._handleGetData()
-        // }
-    }
-    static getDerivedStateFromProps(props, state) {
-        if(props.route.params !== undefined){
-            return {
-                ...state,
-               ...props.route.params.data
-            };
-        }
-        else{
-            return null;
-        }
-    }
+  }
     _handleGetData = ()=>{
         console.log('handle')
         Axios({
@@ -94,7 +93,6 @@ class ShopScreen extends Component {
         })
     }
     _handleSort = ()=>(data)=>{
-        console.log(data)
         this.setState({
             sort : data.value,
             soryBy : data.name,

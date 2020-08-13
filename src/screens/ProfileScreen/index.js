@@ -6,6 +6,7 @@ import {API_URL} from '@env';
 import {connect} from 'react-redux';
 import {myOrderList} from '../../redux/actions/order';
 import {myAddressList} from '../../redux/actions/address';
+import {logout} from '../../redux/actions/auth';
 
 class ProfileScreen extends Component {
   constructor(props) {
@@ -41,6 +42,11 @@ class ProfileScreen extends Component {
       .catch((err) => {
         console.log(err.response);
       });
+  };
+  handleLogout = () => {
+    this.props.logout().then(() => {
+      this.props.navigation.replace('');
+    });
   };
   componentDidMount = () => {
     this.handleMyOrderList();
@@ -119,6 +125,18 @@ class ProfileScreen extends Component {
               style={{marginLeft: 'auto', marginTop: 8}}
             />
           </TouchableOpacity>
+          <TouchableOpacity
+            onPress={this.handleLogout}
+            style={{marginTop: 40, flexDirection: 'row'}}>
+            <View>
+              <Text style={{fontWeight: 'bold', fontSize: 20}}>Logout</Text>
+            </View>
+            <Icon
+              name="angle-right"
+              size={28}
+              style={{marginLeft: 'auto', marginTop: 8}}
+            />
+          </TouchableOpacity>
         </ScrollView>
       </View>
     );
@@ -128,5 +146,5 @@ const mapStateToProps = (state) => ({
   user: state.auth,
 });
 
-const mapDispatchToProp = {myOrderList, myAddressList};
+const mapDispatchToProp = {myOrderList, myAddressList, logout};
 export default connect(mapStateToProps, mapDispatchToProp)(ProfileScreen);

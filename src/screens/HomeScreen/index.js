@@ -34,7 +34,7 @@ class HomeScreen extends Component {
     await this.setState({
       sort: 'newest',
     });
-    const token = this.props.user.auth.token
+    const token = this.props.user.auth.token;
     const {page, search, category, size, color, sort} = this.state;
     this.props
       .getProduct(token, page, search, category, size, color, sort)
@@ -51,7 +51,7 @@ class HomeScreen extends Component {
     await this.setState({
       sort: 'popular',
     });
-    const token = this.props.user.auth.token
+    const token = this.props.user.auth.token;
     const {page, search, category, size, color, sort} = this.state;
     this.props
       .getProduct(token, page, search, category, size, color, sort)
