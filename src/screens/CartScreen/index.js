@@ -78,10 +78,9 @@ class ShopScreen extends Component {
               }}>
               My Bag
             </Text>
-            {listCartItem.map((item) => (
-              <>
+            {listCartItem.map((item,key) => (
+              <View key={key}>
                 <View
-                  key={item.id}
                   style={{
                     backgroundColor: 'white',
                     height: 120,
@@ -267,7 +266,7 @@ class ShopScreen extends Component {
                     </Text>
                   </View>
                 </View>
-              </>
+              </View>
             ))}
           </View>
         </ScrollView>

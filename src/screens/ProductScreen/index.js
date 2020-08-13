@@ -73,8 +73,9 @@ class ProductScreen extends Component {
               <View style={style.color}>
                 <Text style={style.textColor}>Color</Text>
                 <View style={style.colorControl}>
-                  {listColor.map((colorItem) => (
+                  {listColor.map((colorItem,index) => (
                     <TouchableOpacity
+                    key={index}
                       onPress={() =>
                         this.setState({
                           selected_color: colorItem,
