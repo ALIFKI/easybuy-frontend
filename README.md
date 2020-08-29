@@ -47,7 +47,7 @@
 This project is licensed under the MIT License - see the [LICENSE](https://github.com/ALIFKI/easybuy-frontendblob/master/LICENSE) file for details
 
 ## Demo Image
-
+1. Home Page
 ![WhatsApp Image 2020-08-28 at 20 15 41](https://user-images.githubusercontent.com/63132957/91628495-72734f00-e9ea-11ea-9350-431a72c02952.jpeg)
 ![WhatsApp Image 2020-08-28 at 20 15 42](https://user-images.githubusercontent.com/63132957/91628496-769f6c80-e9ea-11ea-8551-0e7841102837.jpeg)
 ![WhatsApp Image 2020-08-28 at 20 15 42 (1)](https://user-images.githubusercontent.com/63132957/91628497-78693000-e9ea-11ea-80c3-0a25def758db.jpeg)
